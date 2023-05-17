@@ -266,5 +266,10 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
             connection.Close();
             return sb.ToString();
         }
+
+        private void ActivityTable_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

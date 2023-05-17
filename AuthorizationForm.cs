@@ -46,7 +46,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                 Users.User = $"Пользователь: {loginUser}";
                 ActivityTable activityTable = new ActivityTable();
                 this.Hide();
-                activityTable.ShowDialog();
+                activityTable.Show();
             }
             else // Пароль или логин не совпали с БД
             {
@@ -64,7 +64,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
             Users.User = "Пользователь: Гость";
             ActivityTable activityTable = new ActivityTable();
             this.Hide();
-            activityTable.ShowDialog();
+            activityTable.Show();
         }
 
         private void AuthorizationForm_FormClosing(object sender, FormClosingEventArgs e)

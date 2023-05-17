@@ -264,6 +264,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
 
         }
 
-
+        private void CustomersTable_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
