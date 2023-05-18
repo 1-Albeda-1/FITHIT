@@ -89,7 +89,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         }
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             authorizationForm = new AuthorizationForm();
             authorizationForm.Show();
         }
@@ -171,11 +171,6 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
             {
                 MessageBox.Show("Введенные данные не найдены!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void comboBoxActivityName_MouseEnter(object sender, EventArgs e) // Вывод подсказки

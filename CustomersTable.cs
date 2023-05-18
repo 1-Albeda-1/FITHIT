@@ -120,7 +120,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             authorizationForm = new AuthorizationForm();
             authorizationForm.Show();
         }
