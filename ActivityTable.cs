@@ -14,6 +14,22 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
 {
     public partial class ActivityTable : Form
     {
+        private string PRINT_ALL = "SELECT " + // Запроос на заполнение таблицы данными из БД
+                "[ActivityTable].[ID], " +
+                "[ActivityTable].[NameT], " +
+                "[ActivityTable].[SurnameT], " +
+                "[ActivityTable].[FitClub], " +
+                "[ActivityNameTable].[ActivityName], " +
+                "[ActivityTable].[Date], " +
+                "[ActivityTable].[StartTime], " +
+                "[ActivityTable].[Time], " +
+                "[ActivityNameTable].[Cost] " +
+                "FROM " +
+                "[ActivityNameTable], " +
+                "[ActivityTable] " +
+                "WHERE " +
+                "[ActivityTable].[ActivityNameID]=[ActivityNameTable].[ID]";
+
         private string connectionString = "Data Source=FitClubDB.mssql.somee.com;Initial Catalog=FitClubDB;User ID=Albeda1310_SQLLogin_1;Password=qz6kfq6fgy";
         public ActivityTable()
         {
@@ -41,9 +57,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         private AuthorizationForm authorizationForm;
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSet.ActivityTable". При необходимости она может быть перемещена или удалена.
-            this.activityTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityTable);
-            
+            TableLoad(PRINT_ALL);
         }
 
         private void рассписаниеЗанятийToolStripMenuItem_Click(object sender, EventArgs e) // Открытие таблицы рассписания занятий
@@ -65,8 +79,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
             addActivity = new AddActivity();
             if (addActivity.ShowDialog() == DialogResult.OK)
             {
-                this.activityTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityTable);
-
+                TableLoad(PRINT_ALL);
             }
         }
 
@@ -93,22 +106,22 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
             switch (listBoxSort.SelectedIndex) // Обработка выбранного столбца
             {
                 case 0:
-                    COL = nameTDataGridViewTextBoxColumn;
+                    COL = NameTDataGridViewTextBoxColumn;
                     break;
                 case 1:
-                    COL = surnameTDataGridViewTextBoxColumn;
+                    COL = SurnameTDataGridViewTextBoxColumn;
                     break ;
                 case 2:
-                    COL = activityDataGridViewTextBoxColumn;
+                    COL = ActivityNameIDDataGridViewTextBoxColumn;
                     break;
                 case 3:
-                    COL = dateDataGridViewTextBoxColumn;
+                    COL = DateDataGridViewTextBoxColumn;
                     break;
                 case 4:
-                    COL = timeDataGridViewTextBoxColumn;
+                    COL = TimeDataGridViewTextBoxColumn;
                     break;
                 case 5:
-                    COL = costDataGridViewTextBoxColumn;
+                    COL = CostDataGridViewTextBoxColumn;
                     break;
             }
             if(radioButtonUp.Checked)
@@ -121,16 +134,18 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
 
         private void buttonFilter_Click(object sender, EventArgs e) // Фильтрация по выбранному наименованию
         {
-            bindingSourceActivity.Filter = "Activity='" + comboBoxActivityName.Text + "'";
+            TableLoad(PRINT_ALL + " AND " +
+               $"[ActivityTable].[ActivityName]='{comboBoxActivityName.SelectedValue}'");
         }
 
         private void buttonViewAll_Click(object sender, EventArgs e) // Кнопка, которая показывает все даннные таблицы
         {
-            bindingSourceActivity.Filter = "";
+            TableLoad(PRINT_ALL);
         }
 
         private void buttonSearch_Click(object sender, EventArgs e) // Поиск по таблице
         {
+            bool proverka = false;
             for(int i = 0; i < dataGridViewActivity.ColumnCount - 1; i++)
             {
                 for (int j = 0; j < dataGridViewActivity.RowCount - 1; j++)
@@ -148,8 +163,13 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                     {
                         dataGridViewActivity[i, j].Style.BackColor = Color.AliceBlue;
                         dataGridViewActivity[i, j].Style.ForeColor = Color.Blue;
-                    }           
+                        proverka = true;
+                    }
                 }
+            }
+            if(!proverka)
+            {
+                MessageBox.Show("Введенные данные не найдены!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -196,8 +216,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                 ExcelSheet.Cells[1,4] = "Фитнес-клуб";
                 ExcelSheet.Cells[1,5] = "Занятие";
                 ExcelSheet.Cells[1,6] = "Дата проведения";
-                ExcelSheet.Cells[1,7] = "Длительность занятия";
-                ExcelSheet.Cells[1,8] = "Стоимость";
+                ExcelSheet.Cells[1,7] = "Время проведения";
+                ExcelSheet.Cells[1,8] = "Длительность занятия";
+                ExcelSheet.Cells[1,9] = "Стоимость";
 
                 for(int i = 0; i < dataGridViewActivity.Rows.Count - 1; i++)
                 {
@@ -223,7 +244,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
 
                     query = $"DELETE FROM ActivityTable WHERE ID = {Id}";
                     ReadQuery(query);
-                    this.activityTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityTable);
+                    TableLoad(PRINT_ALL);
                 }
             }
             else
@@ -265,6 +286,37 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
             reader.Close();
             connection.Close();
             return sb.ToString();
+        }
+        private void TableLoad(string query) // Метод заполняющий dataGridView значениями при помощи запроса
+        {
+            dataGridViewActivity.Rows.Clear();
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[9]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+                data[data.Count - 1][4] = reader[4].ToString();
+                data[data.Count - 1][5] = reader[5].ToString();
+                data[data.Count - 1][6] = reader[6].ToString();
+                data[data.Count - 1][7] = reader[7].ToString();
+                data[data.Count - 1][8] = reader[8].ToString();
+            }
+            reader.Close();
+
+            foreach (string[] s in data)
+                dataGridViewActivity.Rows.Add(s);
+
+            connection.Close();
+
         }
 
         private void ActivityTable_FormClosing(object sender, FormClosingEventArgs e)

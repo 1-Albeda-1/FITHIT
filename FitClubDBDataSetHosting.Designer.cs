@@ -20,9 +20,11 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("FitClubDBDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("FitClubDBDataSetHosting")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class FitClubDBDataSet : global::System.Data.DataSet {
+    public partial class FitClubDBDataSetHosting : global::System.Data.DataSet {
+        
+        private ActivityNameTableDataTable tableActivityNameTable;
         
         private ActivityTableDataTable tableActivityTable;
         
@@ -30,13 +32,15 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         
         private UsersTableDataTable tableUsersTable;
         
+        private global::System.Data.DataRelation relationFK_ActivityTable_ActivityNameTable;
+        
         private global::System.Data.DataRelation relationFK_CustomersTable_ActivityTable;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public FitClubDBDataSet() {
+        public FitClubDBDataSetHosting() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -47,7 +51,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected FitClubDBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected FitClubDBDataSetHosting(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -60,6 +64,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                if ((ds.Tables["ActivityNameTable"] != null)) {
+                    base.Tables.Add(new ActivityNameTableDataTable(ds.Tables["ActivityNameTable"]));
+                }
                 if ((ds.Tables["ActivityTable"] != null)) {
                     base.Tables.Add(new ActivityTableDataTable(ds.Tables["ActivityTable"]));
                 }
@@ -85,6 +92,16 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ActivityNameTableDataTable ActivityNameTable {
+            get {
+                return this.tableActivityNameTable;
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -159,7 +176,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            FitClubDBDataSet cln = ((FitClubDBDataSet)(base.Clone()));
+            FitClubDBDataSetHosting cln = ((FitClubDBDataSetHosting)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -184,6 +201,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
+                if ((ds.Tables["ActivityNameTable"] != null)) {
+                    base.Tables.Add(new ActivityNameTableDataTable(ds.Tables["ActivityNameTable"]));
+                }
                 if ((ds.Tables["ActivityTable"] != null)) {
                     base.Tables.Add(new ActivityTableDataTable(ds.Tables["ActivityTable"]));
                 }
@@ -226,6 +246,12 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
+            this.tableActivityNameTable = ((ActivityNameTableDataTable)(base.Tables["ActivityNameTable"]));
+            if ((initTable == true)) {
+                if ((this.tableActivityNameTable != null)) {
+                    this.tableActivityNameTable.InitVars();
+                }
+            }
             this.tableActivityTable = ((ActivityTableDataTable)(base.Tables["ActivityTable"]));
             if ((initTable == true)) {
                 if ((this.tableActivityTable != null)) {
@@ -244,27 +270,40 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                     this.tableUsersTable.InitVars();
                 }
             }
+            this.relationFK_ActivityTable_ActivityNameTable = this.Relations["FK_ActivityTable_ActivityNameTable"];
             this.relationFK_CustomersTable_ActivityTable = this.Relations["FK_CustomersTable_ActivityTable"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "FitClubDBDataSet";
+            this.DataSetName = "FitClubDBDataSetHosting";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/FitClubDBDataSet.xsd";
+            this.Namespace = "http://tempuri.org/FitClubDBDataSetHosting.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tableActivityNameTable = new ActivityNameTableDataTable();
+            base.Tables.Add(this.tableActivityNameTable);
             this.tableActivityTable = new ActivityTableDataTable();
             base.Tables.Add(this.tableActivityTable);
             this.tableCustomersTable = new CustomersTableDataTable();
             base.Tables.Add(this.tableCustomersTable);
             this.tableUsersTable = new UsersTableDataTable();
             base.Tables.Add(this.tableUsersTable);
+            this.relationFK_ActivityTable_ActivityNameTable = new global::System.Data.DataRelation("FK_ActivityTable_ActivityNameTable", new global::System.Data.DataColumn[] {
+                        this.tableActivityNameTable.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableActivityTable.ActivityNameIDColumn}, false);
+            this.Relations.Add(this.relationFK_ActivityTable_ActivityNameTable);
             this.relationFK_CustomersTable_ActivityTable = new global::System.Data.DataRelation("FK_CustomersTable_ActivityTable", new global::System.Data.DataColumn[] {
                         this.tableActivityTable.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableCustomersTable.ActivityIdColumn}, false);
             this.Relations.Add(this.relationFK_CustomersTable_ActivityTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeActivityNameTable() {
+            return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -296,7 +335,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            FitClubDBDataSet ds = new FitClubDBDataSet();
+            FitClubDBDataSetHosting ds = new FitClubDBDataSetHosting();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -341,6 +380,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void ActivityNameTableRowChangeEventHandler(object sender, ActivityNameTableRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void ActivityTableRowChangeEventHandler(object sender, ActivityTableRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -348,6 +390,299 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void UsersTableRowChangeEventHandler(object sender, UsersTableRowChangeEvent e);
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ActivityNameTableDataTable : global::System.Data.TypedTableBase<ActivityNameTableRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnActivityName;
+            
+            private global::System.Data.DataColumn columnCost;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ActivityNameTableDataTable() {
+                this.TableName = "ActivityNameTable";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ActivityNameTableDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected ActivityNameTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ActivityNameColumn {
+                get {
+                    return this.columnActivityName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CostColumn {
+                get {
+                    return this.columnCost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ActivityNameTableRow this[int index] {
+                get {
+                    return ((ActivityNameTableRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ActivityNameTableRowChangeEventHandler ActivityNameTableRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ActivityNameTableRowChangeEventHandler ActivityNameTableRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ActivityNameTableRowChangeEventHandler ActivityNameTableRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ActivityNameTableRowChangeEventHandler ActivityNameTableRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddActivityNameTableRow(ActivityNameTableRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ActivityNameTableRow AddActivityNameTableRow(string ActivityName, decimal Cost) {
+                ActivityNameTableRow rowActivityNameTableRow = ((ActivityNameTableRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        ActivityName,
+                        Cost};
+                rowActivityNameTableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowActivityNameTableRow);
+                return rowActivityNameTableRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ActivityNameTableRow FindByID(int ID) {
+                return ((ActivityNameTableRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ActivityNameTableDataTable cln = ((ActivityNameTableDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ActivityNameTableDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnActivityName = base.Columns["ActivityName"];
+                this.columnCost = base.Columns["Cost"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnActivityName = new global::System.Data.DataColumn("ActivityName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivityName);
+                this.columnCost = new global::System.Data.DataColumn("Cost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCost);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
+                this.columnID.Unique = true;
+                this.columnActivityName.AllowDBNull = false;
+                this.columnActivityName.MaxLength = 50;
+                this.columnCost.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ActivityNameTableRow NewActivityNameTableRow() {
+                return ((ActivityNameTableRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ActivityNameTableRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ActivityNameTableRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ActivityNameTableRowChanged != null)) {
+                    this.ActivityNameTableRowChanged(this, new ActivityNameTableRowChangeEvent(((ActivityNameTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ActivityNameTableRowChanging != null)) {
+                    this.ActivityNameTableRowChanging(this, new ActivityNameTableRowChangeEvent(((ActivityNameTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ActivityNameTableRowDeleted != null)) {
+                    this.ActivityNameTableRowDeleted(this, new ActivityNameTableRowChangeEvent(((ActivityNameTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ActivityNameTableRowDeleting != null)) {
+                    this.ActivityNameTableRowDeleting(this, new ActivityNameTableRowChangeEvent(((ActivityNameTableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveActivityNameTableRow(ActivityNameTableRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                FitClubDBDataSetHosting ds = new FitClubDBDataSetHosting();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ActivityNameTableDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -364,13 +699,11 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             
             private global::System.Data.DataColumn columnFitClub;
             
-            private global::System.Data.DataColumn columnActivity;
-            
             private global::System.Data.DataColumn columnDate;
             
             private global::System.Data.DataColumn columnTime;
             
-            private global::System.Data.DataColumn columnCost;
+            private global::System.Data.DataColumn columnActivityNameID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -439,14 +772,6 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ActivityColumn {
-                get {
-                    return this.columnActivity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn DateColumn {
                 get {
                     return this.columnDate;
@@ -463,9 +788,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CostColumn {
+            public global::System.Data.DataColumn ActivityNameIDColumn {
                 get {
-                    return this.columnCost;
+                    return this.columnActivityNameID;
                 }
             }
             
@@ -506,17 +831,19 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ActivityTableRow AddActivityTableRow(string NameT, string SurnameT, string FitClub, string Activity, System.DateTime Date, string Time, decimal Cost) {
+            public ActivityTableRow AddActivityTableRow(string NameT, string SurnameT, string FitClub, System.DateTime Date, string Time, ActivityNameTableRow parentActivityNameTableRowByFK_ActivityTable_ActivityNameTable) {
                 ActivityTableRow rowActivityTableRow = ((ActivityTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         NameT,
                         SurnameT,
                         FitClub,
-                        Activity,
                         Date,
                         Time,
-                        Cost};
+                        null};
+                if ((parentActivityNameTableRowByFK_ActivityTable_ActivityNameTable != null)) {
+                    columnValuesArray[6] = parentActivityNameTableRowByFK_ActivityTable_ActivityNameTable[0];
+                }
                 rowActivityTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowActivityTableRow);
                 return rowActivityTableRow;
@@ -550,10 +877,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 this.columnNameT = base.Columns["NameT"];
                 this.columnSurnameT = base.Columns["SurnameT"];
                 this.columnFitClub = base.Columns["FitClub"];
-                this.columnActivity = base.Columns["Activity"];
                 this.columnDate = base.Columns["Date"];
                 this.columnTime = base.Columns["Time"];
-                this.columnCost = base.Columns["Cost"];
+                this.columnActivityNameID = base.Columns["ActivityNameID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -567,14 +893,12 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 base.Columns.Add(this.columnSurnameT);
                 this.columnFitClub = new global::System.Data.DataColumn("FitClub", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFitClub);
-                this.columnActivity = new global::System.Data.DataColumn("Activity", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnActivity);
                 this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate);
                 this.columnTime = new global::System.Data.DataColumn("Time", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTime);
-                this.columnCost = new global::System.Data.DataColumn("Cost", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCost);
+                this.columnActivityNameID = new global::System.Data.DataColumn("ActivityNameID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivityNameID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -589,11 +913,10 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 this.columnSurnameT.MaxLength = 35;
                 this.columnFitClub.AllowDBNull = false;
                 this.columnFitClub.MaxLength = 35;
-                this.columnActivity.AllowDBNull = false;
-                this.columnActivity.MaxLength = 35;
                 this.columnDate.AllowDBNull = false;
                 this.columnTime.AllowDBNull = false;
                 this.columnTime.MaxLength = 15;
+                this.columnActivityNameID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -661,7 +984,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FitClubDBDataSet ds = new FitClubDBDataSet();
+                FitClubDBDataSetHosting ds = new FitClubDBDataSetHosting();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1020,7 +1343,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FitClubDBDataSet ds = new FitClubDBDataSet();
+                FitClubDBDataSetHosting ds = new FitClubDBDataSetHosting();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1092,8 +1415,6 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             
             private global::System.Data.DataColumn columnPassword;
             
-            private global::System.Data.DataColumn columnRights;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UsersTableDataTable() {
@@ -1153,14 +1474,6 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn RightsColumn {
-                get {
-                    return this.columnRights;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1196,13 +1509,12 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UsersTableRow AddUsersTableRow(string Login, string Password, string Rights) {
+            public UsersTableRow AddUsersTableRow(string Login, string Password) {
                 UsersTableRow rowUsersTableRow = ((UsersTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Login,
-                        Password,
-                        Rights};
+                        Password};
                 rowUsersTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsersTableRow);
                 return rowUsersTableRow;
@@ -1235,7 +1547,6 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 this.columnID = base.Columns["ID"];
                 this.columnLogin = base.Columns["Login"];
                 this.columnPassword = base.Columns["Password"];
-                this.columnRights = base.Columns["Rights"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1247,8 +1558,6 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 base.Columns.Add(this.columnLogin);
                 this.columnPassword = new global::System.Data.DataColumn("Password", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPassword);
-                this.columnRights = new global::System.Data.DataColumn("Rights", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRights);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -1261,8 +1570,6 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 this.columnLogin.MaxLength = 15;
                 this.columnPassword.AllowDBNull = false;
                 this.columnPassword.MaxLength = 15;
-                this.columnRights.AllowDBNull = false;
-                this.columnRights.MaxLength = 15;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1330,7 +1637,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FitClubDBDataSet ds = new FitClubDBDataSet();
+                FitClubDBDataSetHosting ds = new FitClubDBDataSetHosting();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1386,6 +1693,65 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 }
                 xs.Add(dsSchema);
                 return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ActivityNameTableRow : global::System.Data.DataRow {
+            
+            private ActivityNameTableDataTable tableActivityNameTable;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ActivityNameTableRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableActivityNameTable = ((ActivityNameTableDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableActivityNameTable.IDColumn]));
+                }
+                set {
+                    this[this.tableActivityNameTable.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ActivityName {
+                get {
+                    return ((string)(this[this.tableActivityNameTable.ActivityNameColumn]));
+                }
+                set {
+                    this[this.tableActivityNameTable.ActivityNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Cost {
+                get {
+                    return ((decimal)(this[this.tableActivityNameTable.CostColumn]));
+                }
+                set {
+                    this[this.tableActivityNameTable.CostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ActivityTableRow[] GetActivityTableRows() {
+                if ((this.Table.ChildRelations["FK_ActivityTable_ActivityNameTable"] == null)) {
+                    return new ActivityTableRow[0];
+                }
+                else {
+                    return ((ActivityTableRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ActivityTable_ActivityNameTable"])));
+                }
             }
         }
         
@@ -1449,17 +1815,6 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Activity {
-                get {
-                    return ((string)(this[this.tableActivityTable.ActivityColumn]));
-                }
-                set {
-                    this[this.tableActivityTable.ActivityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime Date {
                 get {
                     return ((global::System.DateTime)(this[this.tableActivityTable.DateColumn]));
@@ -1482,30 +1837,24 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Cost {
+            public int ActivityNameID {
                 get {
-                    try {
-                        return ((decimal)(this[this.tableActivityTable.CostColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Cost\' в таблице \'ActivityTable\' равно DBNull.", e);
-                    }
+                    return ((int)(this[this.tableActivityTable.ActivityNameIDColumn]));
                 }
                 set {
-                    this[this.tableActivityTable.CostColumn] = value;
+                    this[this.tableActivityTable.ActivityNameIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCostNull() {
-                return this.IsNull(this.tableActivityTable.CostColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCostNull() {
-                this[this.tableActivityTable.CostColumn] = global::System.Convert.DBNull;
+            public ActivityNameTableRow ActivityNameTableRow {
+                get {
+                    return ((ActivityNameTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_ActivityTable_ActivityNameTable"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ActivityTable_ActivityNameTable"]);
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1686,15 +2035,38 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                     this[this.tableUsersTable.PasswordColumn] = value;
                 }
             }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class ActivityNameTableRowChangeEvent : global::System.EventArgs {
+            
+            private ActivityNameTableRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Rights {
+            public ActivityNameTableRowChangeEvent(ActivityNameTableRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ActivityNameTableRow Row {
                 get {
-                    return ((string)(this[this.tableUsersTable.RightsColumn]));
+                    return this.eventRow;
                 }
-                set {
-                    this[this.tableUsersTable.RightsColumn] = value;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
                 }
             }
         }
@@ -1802,8 +2174,335 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         }
     }
 }
-namespace Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetTableAdapters {
+namespace Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters {
     
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ActivityNameTableTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public ActivityNameTableTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ActivityNameTable";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("ActivityName", "ActivityName");
+            tableMapping.ColumnMappings.Add("Cost", "Cost");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ActivityNameTable] WHERE (([ID] = @Original_ID) AND ([Activity" +
+                "Name] = @Original_ActivityName) AND ([Cost] = @Original_Cost))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ActivityNameTable] ([ActivityName], [Cost]) VALUES (@ActivityN" +
+                "ame, @Cost);\r\nSELECT ID, ActivityName, Cost FROM ActivityNameTable WHERE (ID = S" +
+                "COPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ActivityNameTable] SET [ActivityName] = @ActivityName, [Cost] = @Cost WHERE (([ID] = @Original_ID) AND ([ActivityName] = @Original_ActivityName) AND ([Cost] = @Original_Cost));
+SELECT ID, ActivityName, Cost FROM ActivityNameTable WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Settings.Default.FitClubDBConnectionStringHosting;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID, ActivityName, Cost FROM dbo.ActivityNameTable";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(FitClubDBDataSetHosting.ActivityNameTableDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual FitClubDBDataSetHosting.ActivityNameTableDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            FitClubDBDataSetHosting.ActivityNameTableDataTable dataTable = new FitClubDBDataSetHosting.ActivityNameTableDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FitClubDBDataSetHosting.ActivityNameTableDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FitClubDBDataSetHosting dataSet) {
+            return this.Adapter.Update(dataSet, "ActivityNameTable");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID, string Original_ActivityName, decimal Original_Cost) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            if ((Original_ActivityName == null)) {
+                throw new global::System.ArgumentNullException("Original_ActivityName");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_ActivityName));
+            }
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_Cost));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string ActivityName, decimal Cost) {
+            if ((ActivityName == null)) {
+                throw new global::System.ArgumentNullException("ActivityName");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(ActivityName));
+            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(Cost));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string ActivityName, decimal Cost, int Original_ID, string Original_ActivityName, decimal Original_Cost, int ID) {
+            if ((ActivityName == null)) {
+                throw new global::System.ArgumentNullException("ActivityName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(ActivityName));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(Cost));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ID));
+            if ((Original_ActivityName == null)) {
+                throw new global::System.ArgumentNullException("Original_ActivityName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_ActivityName));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_Cost));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string ActivityName, decimal Cost, int Original_ID, string Original_ActivityName, decimal Original_Cost) {
+            return this.Update(ActivityName, Cost, Original_ID, Original_ActivityName, Original_Cost, Original_ID);
+        }
+    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -1930,57 +2629,50 @@ namespace Курсовая_СмирноваКристина_ИП_20_3.FitClubDBD
             tableMapping.ColumnMappings.Add("NameT", "NameT");
             tableMapping.ColumnMappings.Add("SurnameT", "SurnameT");
             tableMapping.ColumnMappings.Add("FitClub", "FitClub");
-            tableMapping.ColumnMappings.Add("Activity", "Activity");
             tableMapping.ColumnMappings.Add("Date", "Date");
             tableMapping.ColumnMappings.Add("Time", "Time");
-            tableMapping.ColumnMappings.Add("Cost", "Cost");
+            tableMapping.ColumnMappings.Add("ActivityNameID", "ActivityNameID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ActivityTable] WHERE (([ID] = @Original_ID) AND ([NameT] = @Original_NameT) AND ([SurnameT] = @Original_SurnameT) AND ([FitClub] = @Original_FitClub) AND ([Activity] = @Original_Activity) AND ([Date] = @Original_Date) AND ([Time] = @Original_Time) AND ((@IsNull_Cost = 1 AND [Cost] IS NULL) OR ([Cost] = @Original_Cost)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ActivityTable] WHERE (([ID] = @Original_ID) AND ([NameT] = @Original_NameT) AND ([SurnameT] = @Original_SurnameT) AND ([FitClub] = @Original_FitClub) AND ([Date] = @Original_Date) AND ([Time] = @Original_Time) AND ([ActivityNameID] = @Original_ActivityNameID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurnameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurnameT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FitClub", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FitClub", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Activity", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Time", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityNameID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityNameID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ActivityTable] ([NameT], [SurnameT], [FitClub], [Activity], [Date], [Time], [Cost]) VALUES (@NameT, @SurnameT, @FitClub, @Activity, @Date, @Time, @Cost);
-SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTable WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ActivityTable] ([NameT], [SurnameT], [FitClub], [Date], [Time], [ActivityNameID]) VALUES (@NameT, @SurnameT, @FitClub, @Date, @Time, @ActivityNameID);
+SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTable WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurnameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurnameT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FitClub", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FitClub", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activity", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Time", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityNameID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityNameID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ActivityTable] SET [NameT] = @NameT, [SurnameT] = @SurnameT, [FitClub] = @FitClub, [Activity] = @Activity, [Date] = @Date, [Time] = @Time, [Cost] = @Cost WHERE (([ID] = @Original_ID) AND ([NameT] = @Original_NameT) AND ([SurnameT] = @Original_SurnameT) AND ([FitClub] = @Original_FitClub) AND ([Activity] = @Original_Activity) AND ([Date] = @Original_Date) AND ([Time] = @Original_Time) AND ((@IsNull_Cost = 1 AND [Cost] IS NULL) OR ([Cost] = @Original_Cost)));
-SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTable WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ActivityTable] SET [NameT] = @NameT, [SurnameT] = @SurnameT, [FitClub] = @FitClub, [Date] = @Date, [Time] = @Time, [ActivityNameID] = @ActivityNameID WHERE (([ID] = @Original_ID) AND ([NameT] = @Original_NameT) AND ([SurnameT] = @Original_SurnameT) AND ([FitClub] = @Original_FitClub) AND ([Date] = @Original_Date) AND ([Time] = @Original_Time) AND ([ActivityNameID] = @Original_ActivityNameID));
+SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTable WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurnameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurnameT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FitClub", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FitClub", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activity", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Time", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityNameID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityNameID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurnameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurnameT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FitClub", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FitClub", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Activity", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Time", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityNameID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityNameID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1997,7 +2689,7 @@ SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTab
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM dbo.Activity" +
+            this._commandCollection[0].CommandText = "SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM dbo.Activity" +
                 "Table";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -2006,7 +2698,7 @@ SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FitClubDBDataSet.ActivityTableDataTable dataTable) {
+        public virtual int Fill(FitClubDBDataSetHosting.ActivityTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2019,9 +2711,9 @@ SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FitClubDBDataSet.ActivityTableDataTable GetData() {
+        public virtual FitClubDBDataSetHosting.ActivityTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FitClubDBDataSet.ActivityTableDataTable dataTable = new FitClubDBDataSet.ActivityTableDataTable();
+            FitClubDBDataSetHosting.ActivityTableDataTable dataTable = new FitClubDBDataSetHosting.ActivityTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2029,14 +2721,14 @@ SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTab
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSet.ActivityTableDataTable dataTable) {
+        public virtual int Update(FitClubDBDataSetHosting.ActivityTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSet dataSet) {
+        public virtual int Update(FitClubDBDataSetHosting dataSet) {
             return this.Adapter.Update(dataSet, "ActivityTable");
         }
         
@@ -2059,7 +2751,7 @@ SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_NameT, string Original_SurnameT, string Original_FitClub, string Original_Activity, System.DateTime Original_Date, string Original_Time, global::System.Nullable<decimal> Original_Cost) {
+        public virtual int Delete(int Original_ID, string Original_NameT, string Original_SurnameT, string Original_FitClub, System.DateTime Original_Date, string Original_Time, int Original_ActivityNameID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_NameT == null)) {
                 throw new global::System.ArgumentNullException("Original_NameT");
@@ -2079,27 +2771,14 @@ SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTab
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_FitClub));
             }
-            if ((Original_Activity == null)) {
-                throw new global::System.ArgumentNullException("Original_Activity");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Activity));
-            }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_Date));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Date));
             if ((Original_Time == null)) {
                 throw new global::System.ArgumentNullException("Original_Time");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Time));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Time));
             }
-            if ((Original_Cost.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_Cost.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ActivityNameID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2120,7 +2799,7 @@ SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string NameT, string SurnameT, string FitClub, string Activity, System.DateTime Date, string Time, global::System.Nullable<decimal> Cost) {
+        public virtual int Insert(string NameT, string SurnameT, string FitClub, System.DateTime Date, string Time, int ActivityNameID) {
             if ((NameT == null)) {
                 throw new global::System.ArgumentNullException("NameT");
             }
@@ -2139,25 +2818,14 @@ SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTab
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(FitClub));
             }
-            if ((Activity == null)) {
-                throw new global::System.ArgumentNullException("Activity");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Activity));
-            }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Date));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Date));
             if ((Time == null)) {
                 throw new global::System.ArgumentNullException("Time");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Time));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Time));
             }
-            if ((Cost.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(Cost.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ActivityNameID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2178,23 +2846,7 @@ SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string NameT, 
-                    string SurnameT, 
-                    string FitClub, 
-                    string Activity, 
-                    System.DateTime Date, 
-                    string Time, 
-                    global::System.Nullable<decimal> Cost, 
-                    int Original_ID, 
-                    string Original_NameT, 
-                    string Original_SurnameT, 
-                    string Original_FitClub, 
-                    string Original_Activity, 
-                    System.DateTime Original_Date, 
-                    string Original_Time, 
-                    global::System.Nullable<decimal> Original_Cost, 
-                    int ID) {
+        public virtual int Update(string NameT, string SurnameT, string FitClub, System.DateTime Date, string Time, int ActivityNameID, int Original_ID, string Original_NameT, string Original_SurnameT, string Original_FitClub, System.DateTime Original_Date, string Original_Time, int Original_ActivityNameID, int ID) {
             if ((NameT == null)) {
                 throw new global::System.ArgumentNullException("NameT");
             }
@@ -2213,66 +2865,42 @@ SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTab
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(FitClub));
             }
-            if ((Activity == null)) {
-                throw new global::System.ArgumentNullException("Activity");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Activity));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Date));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Date));
             if ((Time == null)) {
                 throw new global::System.ArgumentNullException("Time");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Time));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Time));
             }
-            if ((Cost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Cost.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ActivityNameID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID));
             if ((Original_NameT == null)) {
                 throw new global::System.ArgumentNullException("Original_NameT");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_NameT));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_NameT));
             }
             if ((Original_SurnameT == null)) {
                 throw new global::System.ArgumentNullException("Original_SurnameT");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_SurnameT));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_SurnameT));
             }
             if ((Original_FitClub == null)) {
                 throw new global::System.ArgumentNullException("Original_FitClub");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_FitClub));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_FitClub));
             }
-            if ((Original_Activity == null)) {
-                throw new global::System.ArgumentNullException("Original_Activity");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Activity));
-            }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_Date));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_Date));
             if ((Original_Time == null)) {
                 throw new global::System.ArgumentNullException("Original_Time");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Time));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Time));
             }
-            if ((Original_Cost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_Cost.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ActivityNameID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2293,8 +2921,8 @@ SELECT ID, NameT, SurnameT, FitClub, Activity, Date, Time, Cost FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NameT, string SurnameT, string FitClub, string Activity, System.DateTime Date, string Time, global::System.Nullable<decimal> Cost, int Original_ID, string Original_NameT, string Original_SurnameT, string Original_FitClub, string Original_Activity, System.DateTime Original_Date, string Original_Time, global::System.Nullable<decimal> Original_Cost) {
-            return this.Update(NameT, SurnameT, FitClub, Activity, Date, Time, Cost, Original_ID, Original_NameT, Original_SurnameT, Original_FitClub, Original_Activity, Original_Date, Original_Time, Original_Cost, Original_ID);
+        public virtual int Update(string NameT, string SurnameT, string FitClub, System.DateTime Date, string Time, int ActivityNameID, int Original_ID, string Original_NameT, string Original_SurnameT, string Original_FitClub, System.DateTime Original_Date, string Original_Time, int Original_ActivityNameID) {
+            return this.Update(NameT, SurnameT, FitClub, Date, Time, ActivityNameID, Original_ID, Original_NameT, Original_SurnameT, Original_FitClub, Original_Date, Original_Time, Original_ActivityNameID, Original_ID);
         }
     }
     
@@ -2494,7 +3122,7 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FitClubDBDataSet.CustomersTableDataTable dataTable) {
+        public virtual int Fill(FitClubDBDataSetHosting.CustomersTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2507,9 +3135,9 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FitClubDBDataSet.CustomersTableDataTable GetData() {
+        public virtual FitClubDBDataSetHosting.CustomersTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FitClubDBDataSet.CustomersTableDataTable dataTable = new FitClubDBDataSet.CustomersTableDataTable();
+            FitClubDBDataSetHosting.CustomersTableDataTable dataTable = new FitClubDBDataSetHosting.CustomersTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2517,14 +3145,14 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSet.CustomersTableDataTable dataTable) {
+        public virtual int Update(FitClubDBDataSetHosting.CustomersTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSet dataSet) {
+        public virtual int Update(FitClubDBDataSetHosting dataSet) {
             return this.Adapter.Update(dataSet, "CustomersTable");
         }
         
@@ -2870,39 +3498,33 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Login", "Login");
             tableMapping.ColumnMappings.Add("Password", "Password");
-            tableMapping.ColumnMappings.Add("Rights", "Rights");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[UsersTable] WHERE (([ID] = @Original_ID) AND ([Login] = @Origi" +
-                "nal_Login) AND ([Password] = @Original_Password) AND ([Rights] = @Original_Right" +
-                "s))";
+                "nal_Login) AND ([Password] = @Original_Password))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Login", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Login", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Rights", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rights", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[UsersTable] ([Login], [Password], [Rights]) VALUES (@Login, @P" +
-                "assword, @Rights);\r\nSELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID" +
-                " = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[UsersTable] ([Login], [Password]) VALUES (@Login, @Password);\r" +
+                "\nSELECT ID, Login, Password FROM UsersTable WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Login", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rights", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rights", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[UsersTable] SET [Login] = @Login, [Password] = @Password, [Rights] = @Rights WHERE (([ID] = @Original_ID) AND ([Login] = @Original_Login) AND ([Password] = @Original_Password) AND ([Rights] = @Original_Rights));
-SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[UsersTable] SET [Login] = @Login, [Password] = @Password WHERE (([I" +
+                "D] = @Original_ID) AND ([Login] = @Original_Login) AND ([Password] = @Original_P" +
+                "assword));\r\nSELECT ID, Login, Password FROM UsersTable WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Login", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rights", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rights", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Login", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Login", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Rights", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rights", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2919,7 +3541,7 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Login, Password, Rights FROM dbo.UsersTable";
+            this._commandCollection[0].CommandText = "SELECT ID, Login, Password FROM dbo.UsersTable";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2927,7 +3549,7 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FitClubDBDataSet.UsersTableDataTable dataTable) {
+        public virtual int Fill(FitClubDBDataSetHosting.UsersTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2940,9 +3562,9 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FitClubDBDataSet.UsersTableDataTable GetData() {
+        public virtual FitClubDBDataSetHosting.UsersTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FitClubDBDataSet.UsersTableDataTable dataTable = new FitClubDBDataSet.UsersTableDataTable();
+            FitClubDBDataSetHosting.UsersTableDataTable dataTable = new FitClubDBDataSetHosting.UsersTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2950,14 +3572,14 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSet.UsersTableDataTable dataTable) {
+        public virtual int Update(FitClubDBDataSetHosting.UsersTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSet dataSet) {
+        public virtual int Update(FitClubDBDataSetHosting dataSet) {
             return this.Adapter.Update(dataSet, "UsersTable");
         }
         
@@ -2980,7 +3602,7 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Login, string Original_Password, string Original_Rights) {
+        public virtual int Delete(int Original_ID, string Original_Login, string Original_Password) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Login == null)) {
                 throw new global::System.ArgumentNullException("Original_Login");
@@ -2993,12 +3615,6 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Password));
-            }
-            if ((Original_Rights == null)) {
-                throw new global::System.ArgumentNullException("Original_Rights");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Rights));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3020,7 +3636,7 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Login, string Password, string Rights) {
+        public virtual int Insert(string Login, string Password) {
             if ((Login == null)) {
                 throw new global::System.ArgumentNullException("Login");
             }
@@ -3032,12 +3648,6 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Password));
-            }
-            if ((Rights == null)) {
-                throw new global::System.ArgumentNullException("Rights");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Rights));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3059,7 +3669,7 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Login, string Password, string Rights, int Original_ID, string Original_Login, string Original_Password, string Original_Rights, int ID) {
+        public virtual int Update(string Login, string Password, int Original_ID, string Original_Login, string Original_Password, int ID) {
             if ((Login == null)) {
                 throw new global::System.ArgumentNullException("Login");
             }
@@ -3072,32 +3682,20 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Password));
             }
-            if ((Rights == null)) {
-                throw new global::System.ArgumentNullException("Rights");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Rights));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ID));
             if ((Original_Login == null)) {
                 throw new global::System.ArgumentNullException("Original_Login");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Login));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Login));
             }
             if ((Original_Password == null)) {
                 throw new global::System.ArgumentNullException("Original_Password");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Password));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Password));
             }
-            if ((Original_Rights == null)) {
-                throw new global::System.ArgumentNullException("Original_Rights");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Rights));
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3118,8 +3716,8 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Login, string Password, string Rights, int Original_ID, string Original_Login, string Original_Password, string Original_Rights) {
-            return this.Update(Login, Password, Rights, Original_ID, Original_Login, Original_Password, Original_Rights, Original_ID);
+        public virtual int Update(string Login, string Password, int Original_ID, string Original_Login, string Original_Password) {
+            return this.Update(Login, Password, Original_ID, Original_Login, Original_Password, Original_ID);
         }
     }
     
@@ -3134,6 +3732,8 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
     public partial class TableAdapterManager : global::System.ComponentModel.Component {
         
         private UpdateOrderOption _updateOrder;
+        
+        private ActivityNameTableTableAdapter _activityNameTableTableAdapter;
         
         private ActivityTableTableAdapter _activityTableTableAdapter;
         
@@ -3153,6 +3753,20 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ActivityNameTableTableAdapter ActivityNameTableTableAdapter {
+            get {
+                return this._activityNameTableTableAdapter;
+            }
+            set {
+                this._activityNameTableTableAdapter = value;
             }
         }
         
@@ -3217,6 +3831,10 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._activityNameTableTableAdapter != null) 
+                            && (this._activityNameTableTableAdapter.Connection != null))) {
+                    return this._activityNameTableTableAdapter.Connection;
+                }
                 if (((this._activityTableTableAdapter != null) 
                             && (this._activityTableTableAdapter.Connection != null))) {
                     return this._activityTableTableAdapter.Connection;
@@ -3242,6 +3860,9 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._activityNameTableTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 if ((this._activityTableTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -3260,8 +3881,17 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(FitClubDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(FitClubDBDataSetHosting dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._activityNameTableTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ActivityNameTable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._activityNameTableTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._activityTableTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.ActivityTable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -3297,8 +3927,16 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(FitClubDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(FitClubDBDataSetHosting dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._activityNameTableTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ActivityNameTable.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._activityNameTableTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._activityTableTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.ActivityTable.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -3331,7 +3969,7 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(FitClubDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(FitClubDBDataSetHosting dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._usersTableTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.UsersTable.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -3354,6 +3992,14 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._activityTableTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._activityNameTableTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ActivityNameTable.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._activityNameTableTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -3389,12 +4035,17 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(FitClubDBDataSet dataSet) {
+        public virtual int UpdateAll(FitClubDBDataSetHosting dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
+            }
+            if (((this._activityNameTableTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._activityNameTableTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
+                        "r, должны использовать одинаковую строку подключения.");
             }
             if (((this._activityTableTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._activityTableTableAdapter.Connection) == false))) {
@@ -3443,6 +4094,15 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._activityNameTableTableAdapter != null)) {
+                    revertConnections.Add(this._activityNameTableTableAdapter, this._activityNameTableTableAdapter.Connection);
+                    this._activityNameTableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._activityNameTableTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._activityNameTableTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._activityNameTableTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._activityNameTableTableAdapter.Adapter);
+                    }
+                }
                 if ((this._activityTableTableAdapter != null)) {
                     revertConnections.Add(this._activityTableTableAdapter, this._activityTableTableAdapter.Connection);
                     this._activityTableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -3527,6 +4187,10 @@ SELECT ID, Login, Password, Rights FROM UsersTable WHERE (ID = @ID)";
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
+                }
+                if ((this._activityNameTableTableAdapter != null)) {
+                    this._activityNameTableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._activityNameTableTableAdapter]));
+                    this._activityNameTableTableAdapter.Transaction = null;
                 }
                 if ((this._activityTableTableAdapter != null)) {
                     this._activityTableTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._activityTableTableAdapter]));

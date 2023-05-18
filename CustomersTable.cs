@@ -39,13 +39,14 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         private ActivityTable activityTable;
         private CustomersTable customersTable;
         private AuthorizationForm authorizationForm;
+        private CustomersDetailed customersDetailed;
 
         private string PRINT_ALL = "SELECT " + // Запроос на заполнение таблицы данными из БД
                 "[CustomersTable].[ID], " +
                 "[CustomersTable].[Name], " +
                 "[CustomersTable].[Surname], " +
                 "[CustomersTable].[Phone], " +
-                "[ActivityTable].[Activity], " +
+                "[ActivityTable].[ActivityNameID], " +
                 "[CustomersTable].[SeasonTTF], " +
                 "[CustomersTable].[SeasonTicket] " +
                 "FROM " +
@@ -58,10 +59,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
 
         private void CustomersTable_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSet.ActivityTable". При необходимости она может быть перемещена или удалена.
-            this.activityTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityTable);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSet.CustomersTable". При необходимости она может быть перемещена или удалена.
-            this.customersTableTableAdapter.Fill(this.fitClubDBDataSet.CustomersTable); 
+            TableLoad(PRINT_ALL);
         }
 
         private void рассписаниеЗанятийToolStripMenuItem_Click(object sender, EventArgs e) // Открытие таблицы рассписания занятий
@@ -76,6 +74,11 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
             customersTable = new CustomersTable();
             customersTable.Visible = true;
             this.Hide();
+        }        
+        private void btnCustomersDetailed_Click(object sender, EventArgs e) // Открытие таблицы подробной информации о записи
+        {
+            customersDetailed = new CustomersDetailed();
+            customersDetailed.Visible = true;
         }
 
         private void добавитьЗаписьToolStripMenuItem_Click(object sender, EventArgs e) // Открытие окна добавления клиентов
@@ -162,6 +165,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
 
         private void buttonSearch_Click(object sender, EventArgs e) // Поиск по таблице
         {
+            bool proverka = false;
             for (int i = 0; i < dataGridViewCustomers.ColumnCount - 1; i++)
             {
                 for (int j = 0; j < dataGridViewCustomers.RowCount - 1; j++)
@@ -179,8 +183,13 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                     {
                         dataGridViewCustomers[i, j].Style.BackColor = Color.AliceBlue;
                         dataGridViewCustomers[i, j].Style.ForeColor = Color.Blue;
+                        proverka = true;
                     }
                 }
+            }
+            if (!proverka)
+            {
+                MessageBox.Show("Введенные данные не найдены!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         } 
         private void экспортДанныхToolStripMenuItem_Click(object sender, EventArgs e) // Экспорт таблицы в Excel
@@ -268,5 +277,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         {
             Application.Exit();
         }
+
+
     }
 }

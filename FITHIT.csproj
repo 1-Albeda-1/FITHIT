@@ -110,16 +110,22 @@
     <Compile Include="AuthorizationForm.Designer.cs">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomersDetailed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomersDetailed.Designer.cs">
+      <DependentUpon>CustomersDetailed.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomersTable.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomersTable.Designer.cs">
       <DependentUpon>CustomersTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="FitClubDBDataSet.Designer.cs">
+    <Compile Include="FitClubDBDataSetHosting.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FitClubDBDataSet.xsd</DependentUpon>
+      <DependentUpon>FitClubDBDataSetHosting.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +142,9 @@
     <EmbeddedResource Include="AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomersDetailed.resx">
+      <DependentUpon>CustomersDetailed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomersTable.resx">
       <DependentUpon>CustomersTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,16 +158,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="FitClubDBDataSet.xsc">
-      <DependentUpon>FitClubDBDataSet.xsd</DependentUpon>
+    <None Include="FitClubDBDataSetHosting.xsc">
+      <DependentUpon>FitClubDBDataSetHosting.xsd</DependentUpon>
     </None>
-    <None Include="FitClubDBDataSet.xsd">
+    <None Include="FitClubDBDataSetHosting.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FitClubDBDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>FitClubDBDataSetHosting.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="FitClubDBDataSet.xss">
-      <DependentUpon>FitClubDBDataSet.xsd</DependentUpon>
+    <None Include="FitClubDBDataSetHosting.xss">
+      <DependentUpon>FitClubDBDataSetHosting.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

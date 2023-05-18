@@ -19,38 +19,30 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
             ToolTip tip = new ToolTip();
             tip.SetToolTip(nameTTextBox, "Введите имя тренера, который будет проводить занятие"); // Вывод подсказок
             tip.SetToolTip(surnameTTextBox, "Введите фамилию тренера, который будет проводить занятие");
-            tip.SetToolTip(costTextBox, "Введите стоимость занятия");
         }
-
+        private string connectionString = "Data Source=FitClubDB.mssql.somee.com;Initial Catalog=FitClubDB;User ID=Albeda1310_SQLLogin_1;Password=qz6kfq6fgy";
         private void AddActivity_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSet.ActivityTable". При необходимости она может быть перемещена или удалена.
-            this.activityTableAdapter.Fill(this.fitClubDBDataSet.ActivityTable);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSetHosting.ActivityNameTable". При необходимости она может быть перемещена или удалена.
+            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSetHosting.ActivityNameTable);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e) // Кнопка добавить запись
         {
-            activityBindingSource.AddNew();
-
-        }
-        private void buttonClear_Click(object sender, EventArgs e) // Кнопка очистки полей
-        {
-            nameTTextBox.Clear();
-            surnameTTextBox.Clear();
-            costTextBox.Clear();
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e) // Кнопка сохранить запись
-        {
-            if (nameTTextBox.Text.Length != 0 && surnameTTextBox.Text.Length != 0 && costTextBox.Text.Length != 0)
+            if (nameTTextBox.Text.Length != 0 && surnameTTextBox.Text.Length != 0)
             {
-                this.Validate();
-                this.activityBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.fitClubDBDataSet);
+                string query = $"INSERT INTO ActivityTable VALUES('{nameTTextBox.Text}', '{surnameTTextBox.Text}', '{fitclubComboBox.SelectedItem}', '{dateDateTimePicker.Text}', '{timeComboBox.SelectedItem}', '{activityComboBox.SelectedValue}', '{startTimecomboBox.Text}')"; // Запрос на добавление данных введенных в поля в БД
+
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.ExecuteNonQuery();
+
+                connection.Close();
             }
             else
             {
-                MessageBox.Show("Пожалуйста заполните все поля перед сохранением!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Пожалуйста заполните все поля перед добалением!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -58,14 +50,6 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void costTextBox_KeyPress(object sender, KeyPressEventArgs e) // Проверка на ввод только цифр
-        {
-            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == '.') && (costTextBox.Text.IndexOf(".") == -1) && (costTextBox.Text.Length != 0)))
-            {
-                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
-            }
         }
 
         private void surnameTTextBox_KeyPress(object sender, KeyPressEventArgs e) // Проверка на ввод только символов

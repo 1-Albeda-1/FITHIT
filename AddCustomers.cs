@@ -24,16 +24,22 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
 
         private void AddCustomers_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSet.ActivityTable". При необходимости она может быть перемещена или удалена.
-            this.activityTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityTable);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSet.CustomersTable". При необходимости она может быть перемещена или удалена.
-            this.customersTableAdapter.Fill(this.fitClubDBDataSet.CustomersTable);
-
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSetHosting.ActivityNameTable". При необходимости она может быть перемещена или удалена.
+            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSetHosting.ActivityNameTable);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSetHosting.ActivityTable". При необходимости она может быть перемещена или удалена.
+            this.activityTableTableAdapter.Fill(this.fitClubDBDataSetHosting.ActivityTable);
         }
         private void seasonTTFComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            seasonTicketComboBox.Enabled = false;
-            seasonTicketComboBox.Text = null;
+            if(seasonTTFComboBox.SelectedIndex == 1)
+            {
+                seasonTicketComboBox.Enabled = false;
+                seasonTicketComboBox.Text = " ";
+            }
+            else
+            {
+                seasonTicketComboBox.Enabled = true;
+            }
         }
         private void buttonAdd_Click(object sender, EventArgs e) // Кнопка добавить запись
         {
