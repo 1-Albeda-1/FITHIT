@@ -50,7 +50,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
             }
             else // Пароль или логин не совпали с БД
             {
-                MessageBox.Show("Такого аккаунта не существует!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Такого аккаунта не существует!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
       

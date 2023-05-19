@@ -38,6 +38,8 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
 
         private void CustomersList_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSetHosting.CustomersTable". При необходимости она может быть перемещена или удалена.
+            this.customersTableTableAdapter.Fill(this.fitClubDBDataSetHosting.CustomersTable);
             TableLoad(PRINT_ALL);
         }
         private void TableLoad(string query) // Метод заполняющий dataGridView значениями при помощи запроса

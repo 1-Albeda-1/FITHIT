@@ -42,6 +42,15 @@
             this.просмотрСправкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewActivity = new System.Windows.Forms.DataGridView();
+            this.IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SurnameTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FitClubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActivityNameIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceActivity = new System.Windows.Forms.BindingSource(this.components);
             this.fitClubDBDataSetHosting = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHosting();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,15 +74,6 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.activityTableTableAdapter = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters.ActivityTableTableAdapter();
             this.activityNameTableTableAdapter = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters.ActivityNameTableTableAdapter();
-            this.IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SurnameTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FitClubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActivityNameIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActivity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceActivity)).BeginInit();
@@ -86,6 +86,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.базаДанныхToolStripMenuItem,
@@ -95,8 +96,8 @@
             this.выходToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(826, 34);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1514, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,14 +108,14 @@
             this.клиентыToolStripMenuItem});
             this.базаДанныхToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_база_данных_100;
             this.базаДанныхToolStripMenuItem.Name = "базаДанныхToolStripMenuItem";
-            this.базаДанныхToolStripMenuItem.Size = new System.Drawing.Size(122, 32);
+            this.базаДанныхToolStripMenuItem.Size = new System.Drawing.Size(188, 32);
             this.базаДанныхToolStripMenuItem.Text = "База данных";
             // 
             // рассписаниеЗанятийToolStripMenuItem
             // 
             this.рассписаниеЗанятийToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_посмотреть_расписание_100;
             this.рассписаниеЗанятийToolStripMenuItem.Name = "рассписаниеЗанятийToolStripMenuItem";
-            this.рассписаниеЗанятийToolStripMenuItem.Size = new System.Drawing.Size(219, 34);
+            this.рассписаниеЗанятийToolStripMenuItem.Size = new System.Drawing.Size(358, 40);
             this.рассписаниеЗанятийToolStripMenuItem.Text = "Рассписание занятий";
             this.рассписаниеЗанятийToolStripMenuItem.Click += new System.EventHandler(this.рассписаниеЗанятийToolStripMenuItem_Click);
             // 
@@ -122,7 +123,7 @@
             // 
             this.клиентыToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_пользователь_100__1_;
             this.клиентыToolStripMenuItem.Name = "клиентыToolStripMenuItem";
-            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(219, 34);
+            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(358, 40);
             this.клиентыToolStripMenuItem.Text = "Клиенты";
             this.клиентыToolStripMenuItem.Click += new System.EventHandler(this.клиентыToolStripMenuItem_Click);
             // 
@@ -130,7 +131,7 @@
             // 
             this.добавитьЗаписьToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_добавить_100;
             this.добавитьЗаписьToolStripMenuItem.Name = "добавитьЗаписьToolStripMenuItem";
-            this.добавитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(149, 32);
+            this.добавитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(234, 32);
             this.добавитьЗаписьToolStripMenuItem.Text = "Добавить запись";
             this.добавитьЗаписьToolStripMenuItem.Click += new System.EventHandler(this.добавитьЗаписьToolStripMenuItem_Click);
             // 
@@ -138,7 +139,7 @@
             // 
             this.экспортДанныхToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_export_excel_100;
             this.экспортДанныхToolStripMenuItem.Name = "экспортДанныхToolStripMenuItem";
-            this.экспортДанныхToolStripMenuItem.Size = new System.Drawing.Size(146, 32);
+            this.экспортДанныхToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
             this.экспортДанныхToolStripMenuItem.Text = "Экспорт данных";
             this.экспортДанныхToolStripMenuItem.Click += new System.EventHandler(this.экспортДанныхToolStripMenuItem_Click);
             // 
@@ -148,13 +149,13 @@
             this.просмотрСправкиToolStripMenuItem});
             this.справкаToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_документ_100;
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(100, 32);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(149, 32);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // просмотрСправкиToolStripMenuItem
             // 
             this.просмотрСправкиToolStripMenuItem.Name = "просмотрСправкиToolStripMenuItem";
-            this.просмотрСправкиToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.просмотрСправкиToolStripMenuItem.Size = new System.Drawing.Size(330, 40);
             this.просмотрСправкиToolStripMenuItem.Text = "Просмотр справки";
             this.просмотрСправкиToolStripMenuItem.Click += new System.EventHandler(this.просмотрСправкиToolStripMenuItem_Click);
             // 
@@ -162,7 +163,7 @@
             // 
             this.выходToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_выход_100;
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(84, 32);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(119, 32);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -196,267 +197,13 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewActivity.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewActivity.Location = new System.Drawing.Point(20, 62);
-            this.dataGridViewActivity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewActivity.Location = new System.Drawing.Point(37, 114);
+            this.dataGridViewActivity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewActivity.Name = "dataGridViewActivity";
             this.dataGridViewActivity.RowHeadersWidth = 72;
             this.dataGridViewActivity.RowTemplate.Height = 31;
-            this.dataGridViewActivity.Size = new System.Drawing.Size(548, 243);
+            this.dataGridViewActivity.Size = new System.Drawing.Size(1005, 449);
             this.dataGridViewActivity.TabIndex = 1;
-            // 
-            // bindingSourceActivity
-            // 
-            this.bindingSourceActivity.DataSource = this.fitClubDBDataSetHosting;
-            this.bindingSourceActivity.Position = 0;
-            // 
-            // fitClubDBDataSetHosting
-            // 
-            this.fitClubDBDataSetHosting.DataSetName = "FitClubDBDataSetHosting";
-            this.fitClubDBDataSetHosting.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Impact", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(134)))));
-            this.label1.Location = new System.Drawing.Point(143, 36);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(322, 23);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Таблица Расписание занятий \"FITHIT\"";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(28, 320);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Наименование";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(61, 353);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Критерий";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(15, 25);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Поле для сортировки";
-            // 
-            // buttonSort
-            // 
-            this.buttonSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
-            this.buttonSort.Enabled = false;
-            this.buttonSort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSort.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSort.Location = new System.Drawing.Point(17, 177);
-            this.buttonSort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonSort.Name = "buttonSort";
-            this.buttonSort.Size = new System.Drawing.Size(175, 24);
-            this.buttonSort.TabIndex = 7;
-            this.buttonSort.Text = "Сортировать";
-            this.buttonSort.UseVisualStyleBackColor = false;
-            this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click);
-            // 
-            // listBoxSort
-            // 
-            this.listBoxSort.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listBoxSort.FormattingEnabled = true;
-            this.listBoxSort.ItemHeight = 16;
-            this.listBoxSort.Items.AddRange(new object[] {
-            "Имя тренера",
-            "Фамилия тренера",
-            "Занятие",
-            "Дата проведения",
-            "Длительность занятия",
-            "Стоимость"});
-            this.listBoxSort.Location = new System.Drawing.Point(17, 42);
-            this.listBoxSort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listBoxSort.Name = "listBoxSort";
-            this.listBoxSort.Size = new System.Drawing.Size(177, 84);
-            this.listBoxSort.TabIndex = 8;
-            this.listBoxSort.SelectedIndexChanged += new System.EventHandler(this.listBoxSort_SelectedIndexChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButtonDown);
-            this.groupBox1.Controls.Add(this.radioButtonUp);
-            this.groupBox1.Controls.Add(this.listBoxSort);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.buttonSort);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(593, 55);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(207, 215);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Сортировка";
-            // 
-            // radioButtonDown
-            // 
-            this.radioButtonDown.AutoSize = true;
-            this.radioButtonDown.Location = new System.Drawing.Point(17, 157);
-            this.radioButtonDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButtonDown.Name = "radioButtonDown";
-            this.radioButtonDown.Size = new System.Drawing.Size(170, 20);
-            this.radioButtonDown.TabIndex = 10;
-            this.radioButtonDown.Text = "Сортировка по убыванию";
-            this.radioButtonDown.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonUp
-            // 
-            this.radioButtonUp.AutoSize = true;
-            this.radioButtonUp.Checked = true;
-            this.radioButtonUp.Location = new System.Drawing.Point(17, 139);
-            this.radioButtonUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButtonUp.Name = "radioButtonUp";
-            this.radioButtonUp.Size = new System.Drawing.Size(189, 20);
-            this.radioButtonUp.TabIndex = 9;
-            this.radioButtonUp.TabStop = true;
-            this.radioButtonUp.Text = "Сортировка по возрастанию";
-            this.radioButtonUp.UseVisualStyleBackColor = true;
-            // 
-            // buttonFilter
-            // 
-            this.buttonFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
-            this.buttonFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonFilter.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonFilter.Location = new System.Drawing.Point(593, 285);
-            this.buttonFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonFilter.Name = "buttonFilter";
-            this.buttonFilter.Size = new System.Drawing.Size(88, 41);
-            this.buttonFilter.TabIndex = 10;
-            this.buttonFilter.Text = "Фильтровать";
-            this.buttonFilter.UseVisualStyleBackColor = false;
-            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
-            // 
-            // buttonViewAll
-            // 
-            this.buttonViewAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
-            this.buttonViewAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonViewAll.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonViewAll.Location = new System.Drawing.Point(712, 285);
-            this.buttonViewAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonViewAll.Name = "buttonViewAll";
-            this.buttonViewAll.Size = new System.Drawing.Size(88, 41);
-            this.buttonViewAll.TabIndex = 11;
-            this.buttonViewAll.Text = "Показать всё";
-            this.buttonViewAll.UseVisualStyleBackColor = false;
-            this.buttonViewAll.Click += new System.EventHandler(this.buttonViewAll_Click);
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
-            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSearch.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearch.Location = new System.Drawing.Point(593, 330);
-            this.buttonSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(88, 41);
-            this.buttonSearch.TabIndex = 12;
-            this.buttonSearch.Text = "Найти";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(134)))));
-            this.statusStrip1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelHint,
-            this.toolStripStatusLabelAccount});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 388);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 8, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(826, 22);
-            this.statusStrip1.TabIndex = 14;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabelHint
-            // 
-            this.toolStripStatusLabelHint.ForeColor = System.Drawing.Color.White;
-            this.toolStripStatusLabelHint.Name = "toolStripStatusLabelHint";
-            this.toolStripStatusLabelHint.Size = new System.Drawing.Size(11, 17);
-            this.toolStripStatusLabelHint.Text = " ";
-            // 
-            // toolStripStatusLabelAccount
-            // 
-            this.toolStripStatusLabelAccount.ForeColor = System.Drawing.Color.White;
-            this.toolStripStatusLabelAccount.Margin = new System.Windows.Forms.Padding(600, 3, 0, 2);
-            this.toolStripStatusLabelAccount.Name = "toolStripStatusLabelAccount";
-            this.toolStripStatusLabelAccount.Size = new System.Drawing.Size(136, 17);
-            this.toolStripStatusLabelAccount.Text = "toolStripStatusLabel1";
-            // 
-            // textBoxCriteria
-            // 
-            this.textBoxCriteria.Location = new System.Drawing.Point(130, 351);
-            this.textBoxCriteria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBoxCriteria.Name = "textBoxCriteria";
-            this.textBoxCriteria.Size = new System.Drawing.Size(439, 20);
-            this.textBoxCriteria.TabIndex = 15;
-            this.textBoxCriteria.MouseEnter += new System.EventHandler(this.textBoxCriteria_MouseEnter);
-            this.textBoxCriteria.MouseLeave += new System.EventHandler(this.textBoxCriteria_MouseLeave);
-            // 
-            // comboBoxActivityName
-            // 
-            this.comboBoxActivityName.DataSource = this.activityNameTableBindingSource;
-            this.comboBoxActivityName.DisplayMember = "ActivityName";
-            this.comboBoxActivityName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxActivityName.FormattingEnabled = true;
-            this.comboBoxActivityName.Location = new System.Drawing.Point(130, 318);
-            this.comboBoxActivityName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBoxActivityName.Name = "comboBoxActivityName";
-            this.comboBoxActivityName.Size = new System.Drawing.Size(439, 21);
-            this.comboBoxActivityName.TabIndex = 16;
-            this.comboBoxActivityName.ValueMember = "ID";
-            this.comboBoxActivityName.MouseEnter += new System.EventHandler(this.comboBoxActivityName_MouseEnter);
-            this.comboBoxActivityName.MouseLeave += new System.EventHandler(this.comboBoxActivityName_MouseLeave);
-            // 
-            // activityNameTableBindingSource
-            // 
-            this.activityNameTableBindingSource.DataMember = "ActivityNameTable";
-            this.activityNameTableBindingSource.DataSource = this.bindingSourceActivity;
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
-            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDelete.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDelete.Location = new System.Drawing.Point(712, 331);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(87, 41);
-            this.buttonDelete.TabIndex = 42;
-            this.buttonDelete.Text = "Удалить запись";
-            this.buttonDelete.UseVisualStyleBackColor = false;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
-            // activityTableTableAdapter
-            // 
-            this.activityTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // activityNameTableTableAdapter
-            // 
-            this.activityNameTableTableAdapter.ClearBeforeFill = true;
             // 
             // IDDataGridViewTextBoxColumn
             // 
@@ -504,7 +251,9 @@
             // StartTimeDataGridViewTextBoxColumn
             // 
             this.StartTimeDataGridViewTextBoxColumn.HeaderText = "Время проведения";
+            this.StartTimeDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.StartTimeDataGridViewTextBoxColumn.Name = "StartTimeDataGridViewTextBoxColumn";
+            this.StartTimeDataGridViewTextBoxColumn.Width = 175;
             // 
             // TimeDataGridViewTextBoxColumn
             // 
@@ -520,12 +269,266 @@
             this.CostDataGridViewTextBoxColumn.Name = "CostDataGridViewTextBoxColumn";
             this.CostDataGridViewTextBoxColumn.Width = 175;
             // 
+            // bindingSourceActivity
+            // 
+            this.bindingSourceActivity.DataSource = this.fitClubDBDataSetHosting;
+            this.bindingSourceActivity.Position = 0;
+            // 
+            // fitClubDBDataSetHosting
+            // 
+            this.fitClubDBDataSetHosting.DataSetName = "FitClubDBDataSetHosting";
+            this.fitClubDBDataSetHosting.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Impact", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(134)))));
+            this.label1.Location = new System.Drawing.Point(262, 66);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(570, 42);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Таблица Расписание занятий \"FITHIT\"";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(51, 591);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(166, 23);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Наименование";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(112, 652);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 23);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Критерий";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(28, 46);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(223, 23);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Поле для сортировки";
+            // 
+            // buttonSort
+            // 
+            this.buttonSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
+            this.buttonSort.Enabled = false;
+            this.buttonSort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSort.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSort.Location = new System.Drawing.Point(31, 327);
+            this.buttonSort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSort.Name = "buttonSort";
+            this.buttonSort.Size = new System.Drawing.Size(321, 44);
+            this.buttonSort.TabIndex = 7;
+            this.buttonSort.Text = "Сортировать";
+            this.buttonSort.UseVisualStyleBackColor = false;
+            this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click);
+            // 
+            // listBoxSort
+            // 
+            this.listBoxSort.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBoxSort.FormattingEnabled = true;
+            this.listBoxSort.ItemHeight = 22;
+            this.listBoxSort.Items.AddRange(new object[] {
+            "Имя тренера",
+            "Фамилия тренера",
+            "Занятие",
+            "Дата проведения",
+            "Длительность занятия",
+            "Стоимость"});
+            this.listBoxSort.Location = new System.Drawing.Point(31, 78);
+            this.listBoxSort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxSort.Name = "listBoxSort";
+            this.listBoxSort.Size = new System.Drawing.Size(321, 136);
+            this.listBoxSort.TabIndex = 8;
+            this.listBoxSort.SelectedIndexChanged += new System.EventHandler(this.listBoxSort_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButtonDown);
+            this.groupBox1.Controls.Add(this.radioButtonUp);
+            this.groupBox1.Controls.Add(this.listBoxSort);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.buttonSort);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Location = new System.Drawing.Point(1087, 102);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(380, 397);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Сортировка";
+            // 
+            // radioButtonDown
+            // 
+            this.radioButtonDown.AutoSize = true;
+            this.radioButtonDown.Location = new System.Drawing.Point(31, 290);
+            this.radioButtonDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonDown.Name = "radioButtonDown";
+            this.radioButtonDown.Size = new System.Drawing.Size(296, 27);
+            this.radioButtonDown.TabIndex = 10;
+            this.radioButtonDown.Text = "Сортировка по убыванию";
+            this.radioButtonDown.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonUp
+            // 
+            this.radioButtonUp.AutoSize = true;
+            this.radioButtonUp.Checked = true;
+            this.radioButtonUp.Location = new System.Drawing.Point(31, 257);
+            this.radioButtonUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonUp.Name = "radioButtonUp";
+            this.radioButtonUp.Size = new System.Drawing.Size(329, 27);
+            this.radioButtonUp.TabIndex = 9;
+            this.radioButtonUp.TabStop = true;
+            this.radioButtonUp.Text = "Сортировка по возрастанию";
+            this.radioButtonUp.UseVisualStyleBackColor = true;
+            // 
+            // buttonFilter
+            // 
+            this.buttonFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
+            this.buttonFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonFilter.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFilter.Location = new System.Drawing.Point(1087, 526);
+            this.buttonFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFilter.Name = "buttonFilter";
+            this.buttonFilter.Size = new System.Drawing.Size(161, 76);
+            this.buttonFilter.TabIndex = 10;
+            this.buttonFilter.Text = "Фильтровать";
+            this.buttonFilter.UseVisualStyleBackColor = false;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
+            // 
+            // buttonViewAll
+            // 
+            this.buttonViewAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
+            this.buttonViewAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonViewAll.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonViewAll.Location = new System.Drawing.Point(1305, 526);
+            this.buttonViewAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonViewAll.Name = "buttonViewAll";
+            this.buttonViewAll.Size = new System.Drawing.Size(161, 76);
+            this.buttonViewAll.TabIndex = 11;
+            this.buttonViewAll.Text = "Показать всё";
+            this.buttonViewAll.UseVisualStyleBackColor = false;
+            this.buttonViewAll.Click += new System.EventHandler(this.buttonViewAll_Click);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSearch.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearch.Location = new System.Drawing.Point(1087, 609);
+            this.buttonSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(161, 76);
+            this.buttonSearch.TabIndex = 12;
+            this.buttonSearch.Text = "Найти";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(134)))));
+            this.statusStrip1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelHint,
+            this.toolStripStatusLabelAccount});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 724);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 15, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1514, 33);
+            this.statusStrip1.TabIndex = 14;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabelHint
+            // 
+            this.toolStripStatusLabelHint.ForeColor = System.Drawing.Color.White;
+            this.toolStripStatusLabelHint.Name = "toolStripStatusLabelHint";
+            this.toolStripStatusLabelHint.Size = new System.Drawing.Size(16, 24);
+            this.toolStripStatusLabelHint.Text = " ";
+            // 
+            // toolStripStatusLabelAccount
+            // 
+            this.toolStripStatusLabelAccount.ForeColor = System.Drawing.Color.White;
+            this.toolStripStatusLabelAccount.Margin = new System.Windows.Forms.Padding(600, 3, 0, 2);
+            this.toolStripStatusLabelAccount.Name = "toolStripStatusLabelAccount";
+            this.toolStripStatusLabelAccount.Size = new System.Drawing.Size(218, 28);
+            this.toolStripStatusLabelAccount.Text = "toolStripStatusLabel1";
+            // 
+            // textBoxCriteria
+            // 
+            this.textBoxCriteria.Location = new System.Drawing.Point(238, 648);
+            this.textBoxCriteria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCriteria.Name = "textBoxCriteria";
+            this.textBoxCriteria.Size = new System.Drawing.Size(802, 29);
+            this.textBoxCriteria.TabIndex = 15;
+            this.textBoxCriteria.MouseEnter += new System.EventHandler(this.textBoxCriteria_MouseEnter);
+            this.textBoxCriteria.MouseLeave += new System.EventHandler(this.textBoxCriteria_MouseLeave);
+            // 
+            // comboBoxActivityName
+            // 
+            this.comboBoxActivityName.DataSource = this.activityNameTableBindingSource;
+            this.comboBoxActivityName.DisplayMember = "ActivityName";
+            this.comboBoxActivityName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxActivityName.FormattingEnabled = true;
+            this.comboBoxActivityName.Location = new System.Drawing.Point(238, 587);
+            this.comboBoxActivityName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxActivityName.Name = "comboBoxActivityName";
+            this.comboBoxActivityName.Size = new System.Drawing.Size(802, 32);
+            this.comboBoxActivityName.TabIndex = 16;
+            this.comboBoxActivityName.ValueMember = "ID";
+            this.comboBoxActivityName.MouseEnter += new System.EventHandler(this.comboBoxActivityName_MouseEnter);
+            this.comboBoxActivityName.MouseLeave += new System.EventHandler(this.comboBoxActivityName_MouseLeave);
+            // 
+            // activityNameTableBindingSource
+            // 
+            this.activityNameTableBindingSource.DataMember = "ActivityNameTable";
+            this.activityNameTableBindingSource.DataSource = this.fitClubDBDataSetHosting;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonDelete.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDelete.Location = new System.Drawing.Point(1305, 611);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(160, 76);
+            this.buttonDelete.TabIndex = 42;
+            this.buttonDelete.Text = "Удалить запись";
+            this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // activityTableTableAdapter
+            // 
+            this.activityTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // activityNameTableTableAdapter
+            // 
+            this.activityNameTableTableAdapter.ClearBeforeFill = true;
+            // 
             // ActivityTable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(241)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(826, 410);
+            this.ClientSize = new System.Drawing.Size(1514, 757);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.comboBoxActivityName);
             this.Controls.Add(this.textBoxCriteria);
@@ -541,7 +544,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MinimizeBox = false;
             this.Name = "ActivityTable";
             this.Text = "FITHIT";

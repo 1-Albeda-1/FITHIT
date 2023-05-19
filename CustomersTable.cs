@@ -32,6 +32,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                 buttonViewAll.Enabled = false;
                 listBoxSort.Enabled = false;
                 comboBoxCustomersActivity.Enabled = false;
+                btnCustomersDetailed.Enabled = false;
             }
         }
         private System.Windows.Forms.DataGridViewColumn COL;
@@ -59,6 +60,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
 
         private void CustomersTable_Load(object sender, EventArgs e)
         {
+            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSetHosting.ActivityNameTable);
             TableLoad(PRINT_ALL);
         }
 
@@ -96,7 +98,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                 var Id = Convert.ToInt32(dataGridViewCustomers.SelectedRows[0].Cells["ID"].Value);
                 var Name = dataGridViewCustomers.SelectedRows[0].Cells["name"].Value.ToString();
                 var Surname = dataGridViewCustomers.SelectedRows[0].Cells["surname"].Value.ToString();
-                if (MessageBox.Show($"Вы уверены что хотите удалить клиента {Name} {Surname} ?", "Удалить", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show($"Вы уверены что хотите удалить клиента:\n{Name.Remove(Name.IndexOf(' '))} {Surname.Remove(Surname.IndexOf(' '))} ?", "Удалить", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     string query = $"DELETE CustomersTable WHERE ID = {Id}";
                     SqlConnection connection = new SqlConnection(connectionString);
@@ -107,8 +109,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                     connection.Close();
                     TableLoad(PRINT_ALL);
                 }
-            }
-            else
+            }            else
             {
                 MessageBox.Show("Чтобы удалить запись выберите строку в которой она находиться!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

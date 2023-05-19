@@ -57,6 +57,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         private AuthorizationForm authorizationForm;
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSetHosting.ActivityNameTable);
             TableLoad(PRINT_ALL);
         }
 
@@ -135,7 +136,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         private void buttonFilter_Click(object sender, EventArgs e) // Фильтрация по выбранному наименованию
         {
             TableLoad(PRINT_ALL + " AND " +
-               $"[ActivityTable].[ActivityName]='{comboBoxActivityName.SelectedValue}'");
+               $"[ActivityNameTable].[ID]='{comboBoxActivityName.SelectedValue}'");
         }
 
         private void buttonViewAll_Click(object sender, EventArgs e) // Кнопка, которая показывает все даннные таблицы
