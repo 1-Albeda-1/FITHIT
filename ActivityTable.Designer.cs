@@ -74,6 +74,7 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.activityTableTableAdapter = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters.ActivityTableTableAdapter();
             this.activityNameTableTableAdapter = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters.ActivityNameTableTableAdapter();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActivity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceActivity)).BeginInit();
@@ -96,7 +97,6 @@
             this.выходToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1514, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -198,7 +198,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewActivity.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewActivity.Location = new System.Drawing.Point(37, 114);
-            this.dataGridViewActivity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewActivity.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewActivity.Name = "dataGridViewActivity";
             this.dataGridViewActivity.RowHeadersWidth = 72;
             this.dataGridViewActivity.RowTemplate.Height = 31;
@@ -331,7 +331,7 @@
             this.buttonSort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSort.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSort.Location = new System.Drawing.Point(31, 327);
-            this.buttonSort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSort.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSort.Name = "buttonSort";
             this.buttonSort.Size = new System.Drawing.Size(321, 44);
             this.buttonSort.TabIndex = 7;
@@ -352,7 +352,7 @@
             "Длительность занятия",
             "Стоимость"});
             this.listBoxSort.Location = new System.Drawing.Point(31, 78);
-            this.listBoxSort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxSort.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxSort.Name = "listBoxSort";
             this.listBoxSort.Size = new System.Drawing.Size(321, 136);
             this.listBoxSort.TabIndex = 8;
@@ -367,9 +367,9 @@
             this.groupBox1.Controls.Add(this.buttonSort);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(1087, 102);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(380, 397);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
@@ -379,7 +379,7 @@
             // 
             this.radioButtonDown.AutoSize = true;
             this.radioButtonDown.Location = new System.Drawing.Point(31, 290);
-            this.radioButtonDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonDown.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonDown.Name = "radioButtonDown";
             this.radioButtonDown.Size = new System.Drawing.Size(296, 27);
             this.radioButtonDown.TabIndex = 10;
@@ -391,7 +391,7 @@
             this.radioButtonUp.AutoSize = true;
             this.radioButtonUp.Checked = true;
             this.radioButtonUp.Location = new System.Drawing.Point(31, 257);
-            this.radioButtonUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonUp.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonUp.Name = "radioButtonUp";
             this.radioButtonUp.Size = new System.Drawing.Size(329, 27);
             this.radioButtonUp.TabIndex = 9;
@@ -405,7 +405,7 @@
             this.buttonFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonFilter.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonFilter.Location = new System.Drawing.Point(1087, 526);
-            this.buttonFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFilter.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFilter.Name = "buttonFilter";
             this.buttonFilter.Size = new System.Drawing.Size(161, 76);
             this.buttonFilter.TabIndex = 10;
@@ -419,7 +419,7 @@
             this.buttonViewAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonViewAll.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonViewAll.Location = new System.Drawing.Point(1305, 526);
-            this.buttonViewAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonViewAll.Margin = new System.Windows.Forms.Padding(4);
             this.buttonViewAll.Name = "buttonViewAll";
             this.buttonViewAll.Size = new System.Drawing.Size(161, 76);
             this.buttonViewAll.TabIndex = 11;
@@ -433,7 +433,7 @@
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSearch.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSearch.Location = new System.Drawing.Point(1087, 609);
-            this.buttonSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSearch.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(161, 76);
             this.buttonSearch.TabIndex = 12;
@@ -468,13 +468,12 @@
             this.toolStripStatusLabelAccount.ForeColor = System.Drawing.Color.White;
             this.toolStripStatusLabelAccount.Margin = new System.Windows.Forms.Padding(600, 3, 0, 2);
             this.toolStripStatusLabelAccount.Name = "toolStripStatusLabelAccount";
-            this.toolStripStatusLabelAccount.Size = new System.Drawing.Size(218, 28);
-            this.toolStripStatusLabelAccount.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLabelAccount.Size = new System.Drawing.Size(0, 28);
             // 
             // textBoxCriteria
             // 
             this.textBoxCriteria.Location = new System.Drawing.Point(238, 648);
-            this.textBoxCriteria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCriteria.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCriteria.Name = "textBoxCriteria";
             this.textBoxCriteria.Size = new System.Drawing.Size(802, 29);
             this.textBoxCriteria.TabIndex = 15;
@@ -488,7 +487,7 @@
             this.comboBoxActivityName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxActivityName.FormattingEnabled = true;
             this.comboBoxActivityName.Location = new System.Drawing.Point(238, 587);
-            this.comboBoxActivityName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxActivityName.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxActivityName.Name = "comboBoxActivityName";
             this.comboBoxActivityName.Size = new System.Drawing.Size(802, 32);
             this.comboBoxActivityName.TabIndex = 16;
@@ -507,7 +506,7 @@
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDelete.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDelete.Location = new System.Drawing.Point(1305, 611);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(160, 76);
             this.buttonDelete.TabIndex = 42;
@@ -544,7 +543,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimizeBox = false;
             this.Name = "ActivityTable";
             this.Text = "FITHIT";
@@ -609,6 +608,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StartTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
 

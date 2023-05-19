@@ -47,13 +47,15 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                 "[CustomersTable].[Name], " +
                 "[CustomersTable].[Surname], " +
                 "[CustomersTable].[Phone], " +
-                "[ActivityTable].[ActivityNameID], " +
+                "[ActivityNameTable].[ActivityName], " +
                 "[CustomersTable].[SeasonTTF], " +
                 "[CustomersTable].[SeasonTicket] " +
                 "FROM " +
                 "[CustomersTable], " +
+                "[ActivityNameTable], " +
                 "[ActivityTable] " +
                 "WHERE " +
+                "[ActivityTable].[ActivityNameID]=[ActivityNameTable].[ID] AND " +
                 "[CustomersTable].[ActivityId]=[ActivityTable].[ID]";
 
         private string connectionString = "Data Source=FitClubDB.mssql.somee.com;Initial Catalog=FitClubDB;User ID=Albeda1310_SQLLogin_1;Password=qz6kfq6fgy";
@@ -116,7 +118,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         }
         private void просмотрСправкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Help.ShowHelp(this, helpProvider1.HelpNamespace);
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,7 +158,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         private void buttonFilter_Click(object sender, EventArgs e) // Фильтрация по выбранному наименованию
         {
             TableLoad(PRINT_ALL + " AND " +
-               $"[CustomersTable].[Activityid]='{comboBoxCustomersActivity.SelectedValue}'");
+               $"[ActivityTable].[ActivityNameID]='{comboBoxCustomersActivity.SelectedValue}'");
         }
 
         private void buttonViewAll_Click(object sender, EventArgs e) // Кнопка, которая показывает все даннные таблицы

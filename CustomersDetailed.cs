@@ -91,7 +91,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                 ExcelBook = ExcelApp.Workbooks.Add();
                 ExcelApp.Columns.ColumnWidth = 25;
                 ExcelSheet = (Excel.Worksheet)ExcelBook.Sheets[1];
-                ExcelSheet.Name = "Детальная сводка по записям на занятия FITHIT";
+                ExcelSheet.Name = "Детальная сводка";
                 ExcelSheet.Cells[1, 1] = "Имя";
                 ExcelSheet.Cells[1, 2] = "Фамилия";
                 ExcelSheet.Cells[1, 3] = "Занятие";

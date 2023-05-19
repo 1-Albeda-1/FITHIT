@@ -86,7 +86,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
 
         private void просмотрСправкиToolStripMenuItem_Click(object sender, EventArgs e) // Открытие справки с данными о программе
         {
-
+            Help.ShowHelp(this, helpProvider1.HelpNamespace);
         }
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
