@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace Курсовая_СмирноваКристина_ИП_20_3
+namespace FITHIT
 {
     public partial class CustomersDetailed : Form
     {
@@ -100,7 +100,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                 ExcelSheet.Cells[1, 6] = "Стоимость";
                 ExcelSheet.Cells[1, 7] = "Наличие абонемента";
 
-                for (int i = 0; i < dataGridViewCustActivity.Rows.Count - 1; i++)
+                for (int i = 0; i < dataGridViewCustActivity.Rows.Count; i++)
                 {
                     for (int j = 0; j < dataGridViewCustActivity.Columns.Count; j++)
                     {

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
 
-namespace Курсовая_СмирноваКристина_ИП_20_3
+namespace FITHIT
 {
     public partial class CustomersTable : Form
     {
@@ -82,7 +82,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         private void btnCustomersDetailed_Click(object sender, EventArgs e) // Открытие таблицы подробной информации о записи
         {
             customersDetailed = new CustomersDetailed();
-            customersDetailed.Visible = true;
+            customersDetailed.ShowDialog();
         }
 
         private void добавитьЗаписьToolStripMenuItem_Click(object sender, EventArgs e) // Открытие окна добавления клиентов
@@ -100,7 +100,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                 var Id = Convert.ToInt32(dataGridViewCustomers.SelectedRows[0].Cells["ID"].Value);
                 var Name = dataGridViewCustomers.SelectedRows[0].Cells["name"].Value.ToString();
                 var Surname = dataGridViewCustomers.SelectedRows[0].Cells["surname"].Value.ToString();
-                if (MessageBox.Show($"Вы уверены что хотите удалить клиента:\n{Name.Remove(Name.IndexOf(' '))} {Surname.Remove(Surname.IndexOf(' '))} ?", "Удалить", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show($"Вы уверены что хотите удалить клиента:\n{Name} {Surname} ?", "Удалить", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     string query = $"DELETE CustomersTable WHERE ID = {Id}";
                     SqlConnection connection = new SqlConnection(connectionString);
@@ -169,18 +169,18 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         private void buttonSearch_Click(object sender, EventArgs e) // Поиск по таблице
         {
             bool proverka = false;
-            for (int i = 0; i < dataGridViewCustomers.ColumnCount - 1; i++)
+            for (int i = 0; i < dataGridViewCustomers.ColumnCount; i++)
             {
-                for (int j = 0; j < dataGridViewCustomers.RowCount - 1; j++)
+                for (int j = 0; j < dataGridViewCustomers.RowCount; j++)
                 {
                     dataGridViewCustomers[i, j].Style.BackColor = Color.White;
                     dataGridViewCustomers[i, j].Style.ForeColor = Color.Black;
                 }
             }
 
-            for (int i = 0; i < dataGridViewCustomers.ColumnCount - 1; i++)
+            for (int i = 0; i < dataGridViewCustomers.ColumnCount; i++)
             {
-                for (int j = 0; j < dataGridViewCustomers.RowCount - 1; j++)
+                for (int j = 0; j < dataGridViewCustomers.RowCount; j++)
                 {
                     if (dataGridViewCustomers[i, j].Value.ToString().IndexOf(textBoxCriteria.Text) != -1)
                     {
@@ -210,14 +210,15 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                 ExcelApp.Columns.ColumnWidth = 25;
                 ExcelSheet = (Excel.Worksheet)ExcelBook.Sheets[1];
                 ExcelSheet.Name = "Клиенты FITHIT";
-                ExcelSheet.Cells[1, 1] = "Имя";
-                ExcelSheet.Cells[1, 2] = "Фамилия";
-                ExcelSheet.Cells[1, 3] = "Номер телефона";
-                ExcelSheet.Cells[1, 4] = "Занятие";
-                ExcelSheet.Cells[1, 5] = "Наличие абонемента";
-                ExcelSheet.Cells[1, 6] = "Срок абонемента";
+                ExcelSheet.Cells[1, 1] = "Код клиента";
+                ExcelSheet.Cells[1, 2] = "Имя";
+                ExcelSheet.Cells[1, 3] = "Фамилия";
+                ExcelSheet.Cells[1, 4] = "Номер телефона";
+                ExcelSheet.Cells[1, 5] = "Занятие";
+                ExcelSheet.Cells[1, 6] = "Наличие абонемента";
+                ExcelSheet.Cells[1, 7] = "Срок абонемента";
 
-                for (int i = 0; i < dataGridViewCustomers.Rows.Count - 1; i++)
+                for (int i = 0; i < dataGridViewCustomers.Rows.Count; i++)
                 {
                     for (int j = 0; j < dataGridViewCustomers.Columns.Count; j++)
                     {

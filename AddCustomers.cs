@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace Курсовая_СмирноваКристина_ИП_20_3
+namespace FITHIT
 {
     public partial class AddCustomers : Form
     {
@@ -25,9 +25,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         private void AddCustomers_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSetHosting.ActivityNameTable". При необходимости она может быть перемещена или удалена.
-            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSetHosting.ActivityNameTable);
+            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityNameTable);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSetHosting.ActivityTable". При необходимости она может быть перемещена или удалена.
-            this.activityTableTableAdapter.Fill(this.fitClubDBDataSetHosting.ActivityTable);
+            this.activityTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityTable);
         }
         private void seasonTTFComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -85,6 +85,5 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
             }
         }
 
-        
     }
 }

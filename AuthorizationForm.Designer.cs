@@ -1,4 +1,4 @@
-﻿namespace Курсовая_СмирноваКристина_ИП_20_3
+﻿namespace FITHIT
 {
     partial class AuthorizationForm
     {

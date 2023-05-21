@@ -1,4 +1,4 @@
-﻿namespace Курсовая_СмирноваКристина_ИП_20_3
+﻿namespace FITHIT
 {
     partial class AddCustomers
     {
@@ -37,8 +37,6 @@
             System.Windows.Forms.Label activityidLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCustomers));
             this.label1 = new System.Windows.Forms.Label();
-            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fitClubDBDataSetHosting = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHosting();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.surnameTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,33 +46,31 @@
             this.seasonTTFComboBox = new System.Windows.Forms.ComboBox();
             this.seasonTicketComboBox = new System.Windows.Forms.ComboBox();
             this.activityidComboBox = new System.Windows.Forms.ComboBox();
-            this.activityNameTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.activityTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fitClubDBDataSet = new FITHIT.FitClubDBDataSet();
             this.phoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.activityTableTableAdapter = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters.ActivityTableTableAdapter();
-            this.activityNameTableTableAdapter = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters.ActivityNameTableTableAdapter();
+            this.activityTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.ActivityTableTableAdapter();
+            this.activityNameTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.ActivityNameTableTableAdapter();
             nameLabel = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
             fitClubLabel = new System.Windows.Forms.Label();
             seasonTTFLabel = new System.Windows.Forms.Label();
             seasonTicketLabel = new System.Windows.Forms.Label();
             activityidLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSetHosting)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activityNameTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
             nameLabel.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            nameLabel.Location = new System.Drawing.Point(117, 82);
-            nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            nameLabel.Location = new System.Drawing.Point(214, 151);
+            nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(33, 16);
+            nameLabel.Size = new System.Drawing.Size(57, 23);
             nameLabel.TabIndex = 19;
             nameLabel.Text = "Имя:";
             // 
@@ -82,10 +78,10 @@
             // 
             surnameLabel.AutoSize = true;
             surnameLabel.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            surnameLabel.Location = new System.Drawing.Point(90, 120);
-            surnameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            surnameLabel.Location = new System.Drawing.Point(165, 222);
+            surnameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             surnameLabel.Name = "surnameLabel";
-            surnameLabel.Size = new System.Drawing.Size(63, 16);
+            surnameLabel.Size = new System.Drawing.Size(108, 23);
             surnameLabel.TabIndex = 20;
             surnameLabel.Text = "Фамилия:";
             // 
@@ -93,10 +89,10 @@
             // 
             fitClubLabel.AutoSize = true;
             fitClubLabel.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            fitClubLabel.Location = new System.Drawing.Point(90, 158);
-            fitClubLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            fitClubLabel.Location = new System.Drawing.Point(165, 292);
+            fitClubLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             fitClubLabel.Name = "fitClubLabel";
-            fitClubLabel.Size = new System.Drawing.Size(61, 16);
+            fitClubLabel.Size = new System.Drawing.Size(107, 23);
             fitClubLabel.TabIndex = 21;
             fitClubLabel.Text = "Телефон:";
             // 
@@ -104,10 +100,10 @@
             // 
             seasonTTFLabel.AutoSize = true;
             seasonTTFLabel.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            seasonTTFLabel.Location = new System.Drawing.Point(22, 200);
-            seasonTTFLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            seasonTTFLabel.Location = new System.Drawing.Point(40, 369);
+            seasonTTFLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             seasonTTFLabel.Name = "seasonTTFLabel";
-            seasonTTFLabel.Size = new System.Drawing.Size(133, 16);
+            seasonTTFLabel.Size = new System.Drawing.Size(236, 23);
             seasonTTFLabel.TabIndex = 22;
             seasonTTFLabel.Text = "Наличие абонемента:";
             // 
@@ -115,10 +111,10 @@
             // 
             seasonTicketLabel.AutoSize = true;
             seasonTicketLabel.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            seasonTicketLabel.Location = new System.Drawing.Point(37, 243);
-            seasonTicketLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            seasonTicketLabel.Location = new System.Drawing.Point(68, 449);
+            seasonTicketLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             seasonTicketLabel.Name = "seasonTicketLabel";
-            seasonTicketLabel.Size = new System.Drawing.Size(115, 16);
+            seasonTicketLabel.Size = new System.Drawing.Size(204, 23);
             seasonTicketLabel.TabIndex = 23;
             seasonTicketLabel.Text = "Срок абонемента:";
             // 
@@ -126,10 +122,10 @@
             // 
             activityidLabel.AutoSize = true;
             activityidLabel.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            activityidLabel.Location = new System.Drawing.Point(97, 285);
-            activityidLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            activityidLabel.Location = new System.Drawing.Point(178, 526);
+            activityidLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityidLabel.Name = "activityidLabel";
-            activityidLabel.Size = new System.Drawing.Size(54, 16);
+            activityidLabel.Size = new System.Drawing.Size(95, 23);
             activityidLabel.TabIndex = 24;
             activityidLabel.Text = "Занятие:";
             // 
@@ -138,38 +134,28 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(134)))));
-            this.label1.Location = new System.Drawing.Point(136, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(249, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 34);
+            this.label1.Size = new System.Drawing.Size(215, 60);
             this.label1.TabIndex = 17;
             this.label1.Text = "Клиенты";
             // 
-            // customersBindingSource
-            // 
-            this.customersBindingSource.DataMember = "CustomersTable";
-            this.customersBindingSource.DataSource = this.fitClubDBDataSetHosting;
-            // 
-            // fitClubDBDataSetHosting
-            // 
-            this.fitClubDBDataSetHosting.DataSetName = "FitClubDBDataSetHosting";
-            this.fitClubDBDataSetHosting.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(154, 78);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTextBox.Location = new System.Drawing.Point(282, 144);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(141, 20);
+            this.nameTextBox.Size = new System.Drawing.Size(255, 29);
             this.nameTextBox.TabIndex = 20;
             this.nameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTextBox_KeyPress);
             // 
             // surnameTextBox
             // 
-            this.surnameTextBox.Location = new System.Drawing.Point(154, 117);
-            this.surnameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.surnameTextBox.Location = new System.Drawing.Point(282, 216);
+            this.surnameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.surnameTextBox.Name = "surnameTextBox";
-            this.surnameTextBox.Size = new System.Drawing.Size(141, 20);
+            this.surnameTextBox.Size = new System.Drawing.Size(255, 29);
             this.surnameTextBox.TabIndex = 21;
             this.surnameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.surnameTextBox_KeyPress);
             // 
@@ -180,18 +166,18 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(333, 61);
+            this.panel1.Size = new System.Drawing.Size(610, 113);
             this.panel1.TabIndex = 26;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_добавить_пользователя_1001;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 9);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Image = global::FITHIT.Properties.Resources.icons8_добавить_пользователя_1001;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 17);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 44);
+            this.pictureBox1.Size = new System.Drawing.Size(92, 81);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
@@ -201,10 +187,10 @@
             this.buttonClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonClose.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClose.Location = new System.Drawing.Point(178, 318);
-            this.buttonClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonClose.Location = new System.Drawing.Point(326, 587);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(4);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(115, 35);
+            this.buttonClose.Size = new System.Drawing.Size(211, 65);
             this.buttonClose.TabIndex = 50;
             this.buttonClose.Text = "Закрыть";
             this.buttonClose.UseVisualStyleBackColor = false;
@@ -216,10 +202,10 @@
             this.buttonAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAdd.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAdd.Location = new System.Drawing.Point(49, 318);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAdd.Location = new System.Drawing.Point(90, 587);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(115, 35);
+            this.buttonAdd.Size = new System.Drawing.Size(211, 65);
             this.buttonAdd.TabIndex = 45;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = false;
@@ -232,9 +218,10 @@
             this.seasonTTFComboBox.Items.AddRange(new object[] {
             "Да",
             "Нет"});
-            this.seasonTTFComboBox.Location = new System.Drawing.Point(154, 198);
+            this.seasonTTFComboBox.Location = new System.Drawing.Point(282, 366);
+            this.seasonTTFComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.seasonTTFComboBox.Name = "seasonTTFComboBox";
-            this.seasonTTFComboBox.Size = new System.Drawing.Size(141, 21);
+            this.seasonTTFComboBox.Size = new System.Drawing.Size(255, 32);
             this.seasonTTFComboBox.TabIndex = 51;
             this.seasonTTFComboBox.SelectedIndexChanged += new System.EventHandler(this.seasonTTFComboBox_SelectedIndexChanged);
             // 
@@ -246,41 +233,42 @@
             "Год",
             "Месяц",
             "Неделя"});
-            this.seasonTicketComboBox.Location = new System.Drawing.Point(154, 241);
+            this.seasonTicketComboBox.Location = new System.Drawing.Point(282, 445);
+            this.seasonTicketComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.seasonTicketComboBox.Name = "seasonTicketComboBox";
-            this.seasonTicketComboBox.Size = new System.Drawing.Size(141, 21);
+            this.seasonTicketComboBox.Size = new System.Drawing.Size(255, 32);
             this.seasonTicketComboBox.TabIndex = 52;
             // 
             // activityidComboBox
             // 
-            this.activityidComboBox.DataSource = this.activityNameTableBindingSource;
+            this.activityidComboBox.DataSource = this.activityTableBindingSource;
             this.activityidComboBox.DisplayMember = "ActivityName";
             this.activityidComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.activityidComboBox.FormattingEnabled = true;
-            this.activityidComboBox.Location = new System.Drawing.Point(154, 283);
-            this.activityidComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.activityidComboBox.Location = new System.Drawing.Point(282, 522);
+            this.activityidComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityidComboBox.Name = "activityidComboBox";
-            this.activityidComboBox.Size = new System.Drawing.Size(141, 21);
+            this.activityidComboBox.Size = new System.Drawing.Size(255, 32);
             this.activityidComboBox.TabIndex = 53;
             this.activityidComboBox.ValueMember = "ID";
-            // 
-            // activityNameTableBindingSource
-            // 
-            this.activityNameTableBindingSource.DataMember = "ActivityNameTable";
-            this.activityNameTableBindingSource.DataSource = this.fitClubDBDataSetHosting;
             // 
             // activityTableBindingSource
             // 
             this.activityTableBindingSource.DataMember = "ActivityTable";
-            this.activityTableBindingSource.DataSource = this.fitClubDBDataSetHosting;
+            this.activityTableBindingSource.DataSource = this.fitClubDBDataSet;
+            // 
+            // fitClubDBDataSet
+            // 
+            this.fitClubDBDataSet.DataSetName = "FitClubDBDataSet";
+            this.fitClubDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // phoneMaskedTextBox
             // 
-            this.phoneMaskedTextBox.Location = new System.Drawing.Point(154, 156);
-            this.phoneMaskedTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.phoneMaskedTextBox.Location = new System.Drawing.Point(282, 288);
+            this.phoneMaskedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.phoneMaskedTextBox.Mask = "(999) 000-0000";
             this.phoneMaskedTextBox.Name = "phoneMaskedTextBox";
-            this.phoneMaskedTextBox.Size = new System.Drawing.Size(141, 20);
+            this.phoneMaskedTextBox.Size = new System.Drawing.Size(255, 29);
             this.phoneMaskedTextBox.TabIndex = 54;
             // 
             // activityTableTableAdapter
@@ -293,10 +281,10 @@
             // 
             // AddCustomers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(241)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(333, 370);
+            this.ClientSize = new System.Drawing.Size(610, 683);
             this.Controls.Add(this.phoneMaskedTextBox);
             this.Controls.Add(this.activityidComboBox);
             this.Controls.Add(this.seasonTicketComboBox);
@@ -314,19 +302,17 @@
             this.Controls.Add(this.nameTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddCustomers";
             this.Text = "Добавить клиента";
             this.Load += new System.EventHandler(this.AddCustomers_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSetHosting)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activityNameTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,15 +327,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.BindingSource customersBindingSource;
         private System.Windows.Forms.ComboBox seasonTTFComboBox;
         private System.Windows.Forms.ComboBox seasonTicketComboBox;
         private System.Windows.Forms.ComboBox activityidComboBox;
         private System.Windows.Forms.MaskedTextBox phoneMaskedTextBox;
+        private FitClubDBDataSetTableAdapters.ActivityTableTableAdapter activityTableTableAdapter;
+        private FitClubDBDataSetTableAdapters.ActivityNameTableTableAdapter activityNameTableTableAdapter;
+        private FitClubDBDataSet fitClubDBDataSet;
         private System.Windows.Forms.BindingSource activityTableBindingSource;
-        private FitClubDBDataSetHosting fitClubDBDataSetHosting;
-        private FitClubDBDataSetHostingTableAdapters.ActivityTableTableAdapter activityTableTableAdapter;
-        private System.Windows.Forms.BindingSource activityNameTableBindingSource;
-        private FitClubDBDataSetHostingTableAdapters.ActivityNameTableTableAdapter activityNameTableTableAdapter;
     }
 }

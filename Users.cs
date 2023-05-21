@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Курсовая_СмирноваКристина_ИП_20_3
+namespace FITHIT
 {
     static class Users
     {

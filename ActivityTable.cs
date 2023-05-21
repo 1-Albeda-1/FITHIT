@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace Курсовая_СмирноваКристина_ИП_20_3
+namespace FITHIT
 {
     public partial class ActivityTable : Form
     {
@@ -57,7 +57,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         private AuthorizationForm authorizationForm;
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSetHosting.ActivityNameTable);
+            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityNameTable);
             TableLoad(PRINT_ALL);
         }
 
@@ -147,18 +147,18 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         private void buttonSearch_Click(object sender, EventArgs e) // Поиск по таблице
         {
             bool proverka = false;
-            for(int i = 0; i < dataGridViewActivity.ColumnCount - 1; i++)
+            for(int i = 0; i < dataGridViewActivity.ColumnCount; i++)
             {
-                for (int j = 0; j < dataGridViewActivity.RowCount - 1; j++)
+                for (int j = 0; j < dataGridViewActivity.RowCount; j++)
                 {
                     dataGridViewActivity[i, j].Style.BackColor = Color.White;
                     dataGridViewActivity[i, j].Style.ForeColor = Color.Black;
                 }
             }
 
-            for (int i = 0; i < dataGridViewActivity.ColumnCount - 1; i++)
+            for (int i = 0; i < dataGridViewActivity.ColumnCount; i++)
             {
-                for (int j = 0; j < dataGridViewActivity.RowCount - 1; j++)
+                for (int j = 0; j < dataGridViewActivity.RowCount; j++)
                 {
                     if(dataGridViewActivity[i, j].Value.ToString().IndexOf(textBoxCriteria.Text) != -1)
                     {
@@ -216,7 +216,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
                 ExcelSheet.Cells[1,8] = "Длительность занятия";
                 ExcelSheet.Cells[1,9] = "Стоимость";
 
-                for(int i = 0; i < dataGridViewActivity.Rows.Count - 1; i++)
+                for(int i = 0; i < dataGridViewActivity.Rows.Count; i++)
                 {
                     for (int j = 0; j < dataGridViewActivity.Columns.Count; j++)
                     {
@@ -240,6 +240,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
 
                     query = $"DELETE FROM ActivityTable WHERE ID = {Id}";
                     ReadQuery(query);
+
                     TableLoad(PRINT_ALL);
                 }
             }

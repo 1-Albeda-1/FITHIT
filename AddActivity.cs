@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace Курсовая_СмирноваКристина_ИП_20_3
+namespace FITHIT
 {
     public partial class AddActivity : Form
     {
@@ -24,21 +24,20 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
         private void AddActivity_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSetHosting.ActivityNameTable". При необходимости она может быть перемещена или удалена.
-            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSetHosting.ActivityNameTable);
+            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityNameTable);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e) // Кнопка добавить запись
         {
             if (nameTTextBox.Text.Length != 0 && surnameTTextBox.Text.Length != 0)
             {
-                string query = $"INSERT INTO ActivityTable VALUES('{nameTTextBox.Text}', '{surnameTTextBox.Text}', '{fitclubComboBox.SelectedItem}', '{dateDateTimePicker.Text}', '{timeComboBox.SelectedItem}', '{activityComboBox.SelectedValue}', '{startTimecomboBox.Text}')"; // Запрос на добавление данных введенных в поля в БД
-
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                command.ExecuteNonQuery();
-
+                SqlCommand command = new SqlCommand($"SELECT ActivityName FROM ActivityNameTable WHERE [ActivityNameTable].[ID] = '{activityComboBox.SelectedValue}'", connection);
+                String ActivityName = (string)command.ExecuteScalar();
+                string query = $"INSERT INTO ActivityTable VALUES('{nameTTextBox.Text}', '{surnameTTextBox.Text}', '{fitclubComboBox.SelectedItem}', '{dateDateTimePicker.Text}', '{timeComboBox.SelectedItem}', '{activityComboBox.SelectedValue}', '{startTimecomboBox.Text}', '{ActivityName}')"; // Запрос на добавление данных введенных в поля в БД
                 connection.Close();
+                ReadQuery(query);
             }
             else
             {
@@ -46,7 +45,14 @@ namespace Курсовая_СмирноваКристина_ИП_20_3
             }
 
         }
-
+        private void ReadQuery(string query)// Метод считывания запроса
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand(query, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

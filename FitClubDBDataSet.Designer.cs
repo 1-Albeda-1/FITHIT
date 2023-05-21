@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Курсовая_СмирноваКристина_ИП_20_3 {
+namespace FITHIT {
     
     
     /// <summary>
@@ -20,9 +20,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("FitClubDBDataSetHosting")]
+    [global::System.Xml.Serialization.XmlRootAttribute("FitClubDBDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class FitClubDBDataSetHosting : global::System.Data.DataSet {
+    public partial class FitClubDBDataSet : global::System.Data.DataSet {
         
         private ActivityNameTableDataTable tableActivityNameTable;
         
@@ -40,7 +40,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public FitClubDBDataSetHosting() {
+        public FitClubDBDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -51,7 +51,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected FitClubDBDataSetHosting(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected FitClubDBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -176,7 +176,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            FitClubDBDataSetHosting cln = ((FitClubDBDataSetHosting)(base.Clone()));
+            FitClubDBDataSet cln = ((FitClubDBDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -277,9 +277,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "FitClubDBDataSetHosting";
+            this.DataSetName = "FitClubDBDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/FitClubDBDataSetHosting.xsd";
+            this.Namespace = "http://tempuri.org/FitClubDBDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableActivityNameTable = new ActivityNameTableDataTable();
@@ -335,7 +335,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            FitClubDBDataSetHosting ds = new FitClubDBDataSetHosting();
+            FitClubDBDataSet ds = new FitClubDBDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -625,7 +625,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FitClubDBDataSetHosting ds = new FitClubDBDataSetHosting();
+                FitClubDBDataSet ds = new FitClubDBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -704,6 +704,10 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             private global::System.Data.DataColumn columnTime;
             
             private global::System.Data.DataColumn columnActivityNameID;
+            
+            private global::System.Data.DataColumn columnStartTime;
+            
+            private global::System.Data.DataColumn columnActivityName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -796,6 +800,22 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn StartTimeColumn {
+                get {
+                    return this.columnStartTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ActivityNameColumn {
+                get {
+                    return this.columnActivityName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -831,7 +851,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ActivityTableRow AddActivityTableRow(string NameT, string SurnameT, string FitClub, System.DateTime Date, string Time, ActivityNameTableRow parentActivityNameTableRowByFK_ActivityTable_ActivityNameTable) {
+            public ActivityTableRow AddActivityTableRow(string NameT, string SurnameT, string FitClub, string Date, string Time, ActivityNameTableRow parentActivityNameTableRowByFK_ActivityTable_ActivityNameTable, string StartTime, string ActivityName) {
                 ActivityTableRow rowActivityTableRow = ((ActivityTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -840,7 +860,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                         FitClub,
                         Date,
                         Time,
-                        null};
+                        null,
+                        StartTime,
+                        ActivityName};
                 if ((parentActivityNameTableRowByFK_ActivityTable_ActivityNameTable != null)) {
                     columnValuesArray[6] = parentActivityNameTableRowByFK_ActivityTable_ActivityNameTable[0];
                 }
@@ -880,6 +902,8 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 this.columnDate = base.Columns["Date"];
                 this.columnTime = base.Columns["Time"];
                 this.columnActivityNameID = base.Columns["ActivityNameID"];
+                this.columnStartTime = base.Columns["StartTime"];
+                this.columnActivityName = base.Columns["ActivityName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -893,12 +917,16 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 base.Columns.Add(this.columnSurnameT);
                 this.columnFitClub = new global::System.Data.DataColumn("FitClub", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFitClub);
-                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate);
                 this.columnTime = new global::System.Data.DataColumn("Time", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTime);
                 this.columnActivityNameID = new global::System.Data.DataColumn("ActivityNameID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnActivityNameID);
+                this.columnStartTime = new global::System.Data.DataColumn("StartTime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStartTime);
+                this.columnActivityName = new global::System.Data.DataColumn("ActivityName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivityName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -914,9 +942,14 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 this.columnFitClub.AllowDBNull = false;
                 this.columnFitClub.MaxLength = 35;
                 this.columnDate.AllowDBNull = false;
+                this.columnDate.MaxLength = 50;
                 this.columnTime.AllowDBNull = false;
                 this.columnTime.MaxLength = 15;
                 this.columnActivityNameID.AllowDBNull = false;
+                this.columnStartTime.AllowDBNull = false;
+                this.columnStartTime.MaxLength = 50;
+                this.columnActivityName.AllowDBNull = false;
+                this.columnActivityName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -984,7 +1017,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FitClubDBDataSetHosting ds = new FitClubDBDataSetHosting();
+                FitClubDBDataSet ds = new FitClubDBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1267,9 +1300,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnName.AllowDBNull = false;
-                this.columnName.MaxLength = 25;
+                this.columnName.MaxLength = 50;
                 this.columnSurname.AllowDBNull = false;
-                this.columnSurname.MaxLength = 35;
+                this.columnSurname.MaxLength = 50;
                 this.columnPhone.AllowDBNull = false;
                 this.columnPhone.MaxLength = 20;
                 this.columnActivityId.AllowDBNull = false;
@@ -1343,7 +1376,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FitClubDBDataSetHosting ds = new FitClubDBDataSetHosting();
+                FitClubDBDataSet ds = new FitClubDBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1637,7 +1670,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FitClubDBDataSetHosting ds = new FitClubDBDataSetHosting();
+                FitClubDBDataSet ds = new FitClubDBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1815,9 +1848,9 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Date {
+            public string Date {
                 get {
-                    return ((global::System.DateTime)(this[this.tableActivityTable.DateColumn]));
+                    return ((string)(this[this.tableActivityTable.DateColumn]));
                 }
                 set {
                     this[this.tableActivityTable.DateColumn] = value;
@@ -1843,6 +1876,28 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
                 }
                 set {
                     this[this.tableActivityTable.ActivityNameIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string StartTime {
+                get {
+                    return ((string)(this[this.tableActivityTable.StartTimeColumn]));
+                }
+                set {
+                    this[this.tableActivityTable.StartTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ActivityName {
+                get {
+                    return ((string)(this[this.tableActivityTable.ActivityNameColumn]));
+                }
+                set {
+                    this[this.tableActivityTable.ActivityNameColumn] = value;
                 }
             }
             
@@ -2174,7 +2229,7 @@ namespace Курсовая_СмирноваКристина_ИП_20_3 {
         }
     }
 }
-namespace Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters {
+namespace FITHIT.FitClubDBDataSetTableAdapters {
     
     
     /// <summary>
@@ -2335,7 +2390,7 @@ SELECT ID, ActivityName, Cost FROM ActivityNameTable WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Settings.Default.FitClubDBConnectionStringHosting;
+            this._connection.ConnectionString = global::FITHIT.Properties.Settings.Default.FitClubDBConnectionStringHosting;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2352,7 +2407,7 @@ SELECT ID, ActivityName, Cost FROM ActivityNameTable WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FitClubDBDataSetHosting.ActivityNameTableDataTable dataTable) {
+        public virtual int Fill(FitClubDBDataSet.ActivityNameTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2365,9 +2420,9 @@ SELECT ID, ActivityName, Cost FROM ActivityNameTable WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FitClubDBDataSetHosting.ActivityNameTableDataTable GetData() {
+        public virtual FitClubDBDataSet.ActivityNameTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FitClubDBDataSetHosting.ActivityNameTableDataTable dataTable = new FitClubDBDataSetHosting.ActivityNameTableDataTable();
+            FitClubDBDataSet.ActivityNameTableDataTable dataTable = new FitClubDBDataSet.ActivityNameTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2375,14 +2430,14 @@ SELECT ID, ActivityName, Cost FROM ActivityNameTable WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSetHosting.ActivityNameTableDataTable dataTable) {
+        public virtual int Update(FitClubDBDataSet.ActivityNameTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSetHosting dataSet) {
+        public virtual int Update(FitClubDBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "ActivityNameTable");
         }
         
@@ -2632,47 +2687,57 @@ SELECT ID, ActivityName, Cost FROM ActivityNameTable WHERE (ID = @ID)";
             tableMapping.ColumnMappings.Add("Date", "Date");
             tableMapping.ColumnMappings.Add("Time", "Time");
             tableMapping.ColumnMappings.Add("ActivityNameID", "ActivityNameID");
+            tableMapping.ColumnMappings.Add("StartTime", "StartTime");
+            tableMapping.ColumnMappings.Add("ActivityName", "ActivityName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ActivityTable] WHERE (([ID] = @Original_ID) AND ([NameT] = @Original_NameT) AND ([SurnameT] = @Original_SurnameT) AND ([FitClub] = @Original_FitClub) AND ([Date] = @Original_Date) AND ([Time] = @Original_Time) AND ([ActivityNameID] = @Original_ActivityNameID))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ActivityTable] WHERE (([ID] = @Original_ID) AND ([NameT] = @Original_NameT) AND ([SurnameT] = @Original_SurnameT) AND ([FitClub] = @Original_FitClub) AND ([Date] = @Original_Date) AND ([Time] = @Original_Time) AND ([ActivityNameID] = @Original_ActivityNameID) AND ([StartTime] = @Original_StartTime) AND ([ActivityName] = @Original_ActivityName))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurnameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurnameT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FitClub", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FitClub", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Time", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityNameID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityNameID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StartTime", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ActivityTable] ([NameT], [SurnameT], [FitClub], [Date], [Time], [ActivityNameID]) VALUES (@NameT, @SurnameT, @FitClub, @Date, @Time, @ActivityNameID);
-SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTable WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ActivityTable] ([NameT], [SurnameT], [FitClub], [Date], [Time], [ActivityNameID], [StartTime], [ActivityName]) VALUES (@NameT, @SurnameT, @FitClub, @Date, @Time, @ActivityNameID, @StartTime, @ActivityName);
+SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID, StartTime, ActivityName FROM ActivityTable WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurnameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurnameT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FitClub", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FitClub", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Time", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityNameID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityNameID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartTime", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ActivityTable] SET [NameT] = @NameT, [SurnameT] = @SurnameT, [FitClub] = @FitClub, [Date] = @Date, [Time] = @Time, [ActivityNameID] = @ActivityNameID WHERE (([ID] = @Original_ID) AND ([NameT] = @Original_NameT) AND ([SurnameT] = @Original_SurnameT) AND ([FitClub] = @Original_FitClub) AND ([Date] = @Original_Date) AND ([Time] = @Original_Time) AND ([ActivityNameID] = @Original_ActivityNameID));
-SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTable WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ActivityTable] SET [NameT] = @NameT, [SurnameT] = @SurnameT, [FitClub] = @FitClub, [Date] = @Date, [Time] = @Time, [ActivityNameID] = @ActivityNameID, [StartTime] = @StartTime, [ActivityName] = @ActivityName WHERE (([ID] = @Original_ID) AND ([NameT] = @Original_NameT) AND ([SurnameT] = @Original_SurnameT) AND ([FitClub] = @Original_FitClub) AND ([Date] = @Original_Date) AND ([Time] = @Original_Time) AND ([ActivityNameID] = @Original_ActivityNameID) AND ([StartTime] = @Original_StartTime) AND ([ActivityName] = @Original_ActivityName));
+SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID, StartTime, ActivityName FROM ActivityTable WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurnameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurnameT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FitClub", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FitClub", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Time", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityNameID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityNameID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartTime", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurnameT", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurnameT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FitClub", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FitClub", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Time", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityNameID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityNameID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StartTime", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2680,7 +2745,7 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Settings.Default.FitClubDBConnectionStringHosting;
+            this._connection.ConnectionString = global::FITHIT.Properties.Settings.Default.FitClubDBConnectionStringHosting;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2689,8 +2754,8 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM dbo.Activity" +
-                "Table";
+            this._commandCollection[0].CommandText = "SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID, StartTime, Activ" +
+                "ityName FROM dbo.ActivityTable";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2698,7 +2763,7 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FitClubDBDataSetHosting.ActivityTableDataTable dataTable) {
+        public virtual int Fill(FitClubDBDataSet.ActivityTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2711,9 +2776,9 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FitClubDBDataSetHosting.ActivityTableDataTable GetData() {
+        public virtual FitClubDBDataSet.ActivityTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FitClubDBDataSetHosting.ActivityTableDataTable dataTable = new FitClubDBDataSetHosting.ActivityTableDataTable();
+            FitClubDBDataSet.ActivityTableDataTable dataTable = new FitClubDBDataSet.ActivityTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2721,14 +2786,14 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSetHosting.ActivityTableDataTable dataTable) {
+        public virtual int Update(FitClubDBDataSet.ActivityTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSetHosting dataSet) {
+        public virtual int Update(FitClubDBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "ActivityTable");
         }
         
@@ -2751,7 +2816,7 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_NameT, string Original_SurnameT, string Original_FitClub, System.DateTime Original_Date, string Original_Time, int Original_ActivityNameID) {
+        public virtual int Delete(int Original_ID, string Original_NameT, string Original_SurnameT, string Original_FitClub, string Original_Date, string Original_Time, int Original_ActivityNameID, string Original_StartTime, string Original_ActivityName) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_NameT == null)) {
                 throw new global::System.ArgumentNullException("Original_NameT");
@@ -2771,7 +2836,12 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_FitClub));
             }
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Date));
+            if ((Original_Date == null)) {
+                throw new global::System.ArgumentNullException("Original_Date");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Date));
+            }
             if ((Original_Time == null)) {
                 throw new global::System.ArgumentNullException("Original_Time");
             }
@@ -2779,6 +2849,18 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Time));
             }
             this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ActivityNameID));
+            if ((Original_StartTime == null)) {
+                throw new global::System.ArgumentNullException("Original_StartTime");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_StartTime));
+            }
+            if ((Original_ActivityName == null)) {
+                throw new global::System.ArgumentNullException("Original_ActivityName");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_ActivityName));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2799,7 +2881,7 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string NameT, string SurnameT, string FitClub, System.DateTime Date, string Time, int ActivityNameID) {
+        public virtual int Insert(string NameT, string SurnameT, string FitClub, string Date, string Time, int ActivityNameID, string StartTime, string ActivityName) {
             if ((NameT == null)) {
                 throw new global::System.ArgumentNullException("NameT");
             }
@@ -2818,7 +2900,12 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(FitClub));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Date));
+            if ((Date == null)) {
+                throw new global::System.ArgumentNullException("Date");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Date));
+            }
             if ((Time == null)) {
                 throw new global::System.ArgumentNullException("Time");
             }
@@ -2826,6 +2913,18 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Time));
             }
             this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ActivityNameID));
+            if ((StartTime == null)) {
+                throw new global::System.ArgumentNullException("StartTime");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(StartTime));
+            }
+            if ((ActivityName == null)) {
+                throw new global::System.ArgumentNullException("ActivityName");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(ActivityName));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2846,7 +2945,25 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NameT, string SurnameT, string FitClub, System.DateTime Date, string Time, int ActivityNameID, int Original_ID, string Original_NameT, string Original_SurnameT, string Original_FitClub, System.DateTime Original_Date, string Original_Time, int Original_ActivityNameID, int ID) {
+        public virtual int Update(
+                    string NameT, 
+                    string SurnameT, 
+                    string FitClub, 
+                    string Date, 
+                    string Time, 
+                    int ActivityNameID, 
+                    string StartTime, 
+                    string ActivityName, 
+                    int Original_ID, 
+                    string Original_NameT, 
+                    string Original_SurnameT, 
+                    string Original_FitClub, 
+                    string Original_Date, 
+                    string Original_Time, 
+                    int Original_ActivityNameID, 
+                    string Original_StartTime, 
+                    string Original_ActivityName, 
+                    int ID) {
             if ((NameT == null)) {
                 throw new global::System.ArgumentNullException("NameT");
             }
@@ -2865,7 +2982,12 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(FitClub));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Date));
+            if ((Date == null)) {
+                throw new global::System.ArgumentNullException("Date");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Date));
+            }
             if ((Time == null)) {
                 throw new global::System.ArgumentNullException("Time");
             }
@@ -2873,34 +2995,63 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Time));
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ActivityNameID));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID));
+            if ((StartTime == null)) {
+                throw new global::System.ArgumentNullException("StartTime");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(StartTime));
+            }
+            if ((ActivityName == null)) {
+                throw new global::System.ArgumentNullException("ActivityName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(ActivityName));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ID));
             if ((Original_NameT == null)) {
                 throw new global::System.ArgumentNullException("Original_NameT");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_NameT));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_NameT));
             }
             if ((Original_SurnameT == null)) {
                 throw new global::System.ArgumentNullException("Original_SurnameT");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_SurnameT));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_SurnameT));
             }
             if ((Original_FitClub == null)) {
                 throw new global::System.ArgumentNullException("Original_FitClub");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_FitClub));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_FitClub));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_Date));
+            if ((Original_Date == null)) {
+                throw new global::System.ArgumentNullException("Original_Date");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Date));
+            }
             if ((Original_Time == null)) {
                 throw new global::System.ArgumentNullException("Original_Time");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Time));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Time));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ActivityNameID));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ActivityNameID));
+            if ((Original_StartTime == null)) {
+                throw new global::System.ArgumentNullException("Original_StartTime");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_StartTime));
+            }
+            if ((Original_ActivityName == null)) {
+                throw new global::System.ArgumentNullException("Original_ActivityName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_ActivityName));
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2921,8 +3072,25 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NameT, string SurnameT, string FitClub, System.DateTime Date, string Time, int ActivityNameID, int Original_ID, string Original_NameT, string Original_SurnameT, string Original_FitClub, System.DateTime Original_Date, string Original_Time, int Original_ActivityNameID) {
-            return this.Update(NameT, SurnameT, FitClub, Date, Time, ActivityNameID, Original_ID, Original_NameT, Original_SurnameT, Original_FitClub, Original_Date, Original_Time, Original_ActivityNameID, Original_ID);
+        public virtual int Update(
+                    string NameT, 
+                    string SurnameT, 
+                    string FitClub, 
+                    string Date, 
+                    string Time, 
+                    int ActivityNameID, 
+                    string StartTime, 
+                    string ActivityName, 
+                    int Original_ID, 
+                    string Original_NameT, 
+                    string Original_SurnameT, 
+                    string Original_FitClub, 
+                    string Original_Date, 
+                    string Original_Time, 
+                    int Original_ActivityNameID, 
+                    string Original_StartTime, 
+                    string Original_ActivityName) {
+            return this.Update(NameT, SurnameT, FitClub, Date, Time, ActivityNameID, StartTime, ActivityName, Original_ID, Original_NameT, Original_SurnameT, Original_FitClub, Original_Date, Original_Time, Original_ActivityNameID, Original_StartTime, Original_ActivityName, Original_ID);
         }
     }
     
@@ -3060,8 +3228,8 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
             this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[CustomersTable] WHERE (([ID] = @Original_ID) AND ([Name] = @Original_Name) AND ([Surname] = @Original_Surname) AND ([Phone] = @Original_Phone) AND ([ActivityId] = @Original_ActivityId) AND ([SeasonTTF] = @Original_SeasonTTF) AND ((@IsNull_SeasonTicket = 1 AND [SeasonTicket] IS NULL) OR ([SeasonTicket] = @Original_SeasonTicket)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Surname", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Surname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Phone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SeasonTTF", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeasonTTF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3072,8 +3240,8 @@ SELECT ID, NameT, SurnameT, FitClub, Date, Time, ActivityNameID FROM ActivityTab
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[CustomersTable] ([Name], [Surname], [Phone], [ActivityId], [SeasonTTF], [SeasonTicket]) VALUES (@Name, @Surname, @Phone, @ActivityId, @SeasonTTF, @SeasonTicket);
 SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM CustomersTable WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surname", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeasonTTF", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeasonTTF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3083,15 +3251,15 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[CustomersTable] SET [Name] = @Name, [Surname] = @Surname, [Phone] = @Phone, [ActivityId] = @ActivityId, [SeasonTTF] = @SeasonTTF, [SeasonTicket] = @SeasonTicket WHERE (([ID] = @Original_ID) AND ([Name] = @Original_Name) AND ([Surname] = @Original_Surname) AND ([Phone] = @Original_Phone) AND ([ActivityId] = @Original_ActivityId) AND ([SeasonTTF] = @Original_SeasonTTF) AND ((@IsNull_SeasonTicket = 1 AND [SeasonTicket] IS NULL) OR ([SeasonTicket] = @Original_SeasonTicket)));
 SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM CustomersTable WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surname", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeasonTTF", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeasonTTF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeasonTicket", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeasonTicket", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Surname", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Surname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Phone", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SeasonTTF", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeasonTTF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3104,7 +3272,7 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Settings.Default.FitClubDBConnectionStringHosting;
+            this._connection.ConnectionString = global::FITHIT.Properties.Settings.Default.FitClubDBConnectionStringHosting;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3122,7 +3290,7 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FitClubDBDataSetHosting.CustomersTableDataTable dataTable) {
+        public virtual int Fill(FitClubDBDataSet.CustomersTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3135,9 +3303,9 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FitClubDBDataSetHosting.CustomersTableDataTable GetData() {
+        public virtual FitClubDBDataSet.CustomersTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FitClubDBDataSetHosting.CustomersTableDataTable dataTable = new FitClubDBDataSetHosting.CustomersTableDataTable();
+            FitClubDBDataSet.CustomersTableDataTable dataTable = new FitClubDBDataSet.CustomersTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3145,14 +3313,14 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSetHosting.CustomersTableDataTable dataTable) {
+        public virtual int Update(FitClubDBDataSet.CustomersTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSetHosting dataSet) {
+        public virtual int Update(FitClubDBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "CustomersTable");
         }
         
@@ -3532,7 +3700,7 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Settings.Default.FitClubDBConnectionStringHosting;
+            this._connection.ConnectionString = global::FITHIT.Properties.Settings.Default.FitClubDBConnectionStringHosting;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3549,7 +3717,7 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FitClubDBDataSetHosting.UsersTableDataTable dataTable) {
+        public virtual int Fill(FitClubDBDataSet.UsersTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3562,9 +3730,9 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FitClubDBDataSetHosting.UsersTableDataTable GetData() {
+        public virtual FitClubDBDataSet.UsersTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FitClubDBDataSetHosting.UsersTableDataTable dataTable = new FitClubDBDataSetHosting.UsersTableDataTable();
+            FitClubDBDataSet.UsersTableDataTable dataTable = new FitClubDBDataSet.UsersTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3572,14 +3740,14 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSetHosting.UsersTableDataTable dataTable) {
+        public virtual int Update(FitClubDBDataSet.UsersTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FitClubDBDataSetHosting dataSet) {
+        public virtual int Update(FitClubDBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "UsersTable");
         }
         
@@ -3881,7 +4049,7 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(FitClubDBDataSetHosting dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(FitClubDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._activityNameTableTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.ActivityNameTable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -3927,7 +4095,7 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(FitClubDBDataSetHosting dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(FitClubDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._activityNameTableTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.ActivityNameTable.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -3969,7 +4137,7 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(FitClubDBDataSetHosting dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(FitClubDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._usersTableTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.UsersTable.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -4035,7 +4203,7 @@ SELECT ID, Name, Surname, Phone, ActivityId, SeasonTTF, SeasonTicket FROM Custom
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(FitClubDBDataSetHosting dataSet) {
+        public virtual int UpdateAll(FitClubDBDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

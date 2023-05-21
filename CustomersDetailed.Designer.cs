@@ -1,4 +1,4 @@
-﻿namespace Курсовая_СмирноваКристина_ИП_20_3
+﻿namespace FITHIT
 {
     partial class CustomersDetailed
     {
@@ -51,14 +51,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.seasonTicketTextBox = new System.Windows.Forms.TextBox();
             this.customersTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fitClubDBDataSetHosting = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHosting();
+            this.fitClubDBDataSetHosting = new FITHIT.FitClubDBDataSet();
             this.seasonTTFTextBox = new System.Windows.Forms.TextBox();
             this.activityIdTextBox = new System.Windows.Forms.TextBox();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.surnameTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -67,8 +66,8 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.customersTableTableAdapter = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters.CustomersTableTableAdapter();
-            this.tableAdapterManager = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters.TableAdapterManager();
+            this.customersTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.CustomersTableTableAdapter();
+            this.tableAdapterManager = new FITHIT.FitClubDBDataSetTableAdapters.TableAdapterManager();
             nameLabel = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
             phoneLabel = new System.Windows.Forms.Label();
@@ -149,7 +148,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnClose.Location = new System.Drawing.Point(623, 519);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(295, 76);
             this.btnClose.TabIndex = 13;
@@ -159,6 +158,7 @@
             // 
             // dataGridViewCustActivity
             // 
+            this.dataGridViewCustActivity.AllowUserToAddRows = false;
             this.dataGridViewCustActivity.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -186,7 +186,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewCustActivity.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewCustActivity.Location = new System.Drawing.Point(44, 42);
-            this.dataGridViewCustActivity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewCustActivity.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewCustActivity.Name = "dataGridViewCustActivity";
             this.dataGridViewCustActivity.RowHeadersWidth = 72;
             this.dataGridViewCustActivity.RowTemplate.Height = 31;
@@ -248,7 +248,7 @@
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExport.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnExport.Location = new System.Drawing.Point(275, 519);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(295, 76);
             this.btnExport.TabIndex = 15;
@@ -273,9 +273,9 @@
             this.groupBox1.Controls.Add(this.bindingNavigator1);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(1216, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox1.Size = new System.Drawing.Size(522, 582);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
@@ -285,7 +285,7 @@
             // 
             this.seasonTicketTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersTableBindingSource, "SeasonTicket", true));
             this.seasonTicketTextBox.Location = new System.Drawing.Point(244, 513);
-            this.seasonTicketTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.seasonTicketTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.seasonTicketTextBox.Name = "seasonTicketTextBox";
             this.seasonTicketTextBox.Size = new System.Drawing.Size(180, 31);
             this.seasonTicketTextBox.TabIndex = 12;
@@ -304,7 +304,7 @@
             // 
             this.seasonTTFTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersTableBindingSource, "SeasonTTF", true));
             this.seasonTTFTextBox.Location = new System.Drawing.Point(244, 428);
-            this.seasonTTFTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.seasonTTFTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.seasonTTFTextBox.Name = "seasonTTFTextBox";
             this.seasonTTFTextBox.Size = new System.Drawing.Size(180, 31);
             this.seasonTTFTextBox.TabIndex = 10;
@@ -313,7 +313,7 @@
             // 
             this.activityIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersTableBindingSource, "ActivityId", true));
             this.activityIdTextBox.Location = new System.Drawing.Point(244, 338);
-            this.activityIdTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.activityIdTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.activityIdTextBox.Name = "activityIdTextBox";
             this.activityIdTextBox.Size = new System.Drawing.Size(180, 31);
             this.activityIdTextBox.TabIndex = 8;
@@ -322,7 +322,7 @@
             // 
             this.phoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersTableBindingSource, "Phone", true));
             this.phoneTextBox.Location = new System.Drawing.Point(244, 251);
-            this.phoneTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.phoneTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(180, 31);
             this.phoneTextBox.TabIndex = 6;
@@ -331,7 +331,7 @@
             // 
             this.surnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersTableBindingSource, "Surname", true));
             this.surnameTextBox.Location = new System.Drawing.Point(244, 174);
-            this.surnameTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.surnameTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.surnameTextBox.Name = "surnameTextBox";
             this.surnameTextBox.Size = new System.Drawing.Size(180, 31);
             this.surnameTextBox.TabIndex = 4;
@@ -340,7 +340,7 @@
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersTableBindingSource, "Name", true));
             this.nameTextBox.Location = new System.Drawing.Point(244, 103);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(180, 31);
             this.nameTextBox.TabIndex = 2;
@@ -350,7 +350,7 @@
             this.bindingNavigator1.AddNewItem = null;
             this.bindingNavigator1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
             this.bindingNavigator1.BindingSource = this.customersTableBindingSource;
-            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigator1.CountItem = null;
             this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -358,7 +358,6 @@
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
             this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
@@ -371,16 +370,9 @@
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(510, 38);
+            this.bindingNavigator1.Size = new System.Drawing.Size(510, 44);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(75, 32);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -388,7 +380,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(40, 32);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(40, 38);
             this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
             // 
             // bindingNavigatorMovePreviousItem
@@ -397,13 +389,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(40, 32);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(40, 38);
             this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 38);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 44);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -418,7 +410,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 38);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 44);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -426,7 +418,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(40, 32);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(40, 38);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
             // 
             // bindingNavigatorMoveLastItem
@@ -435,13 +427,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(40, 32);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(40, 38);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 38);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 44);
             // 
             // customersTableTableAdapter
             // 
@@ -453,7 +445,7 @@
             this.tableAdapterManager.ActivityTableTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CustomersTableTableAdapter = this.customersTableTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = FITHIT.FitClubDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsersTableTableAdapter = null;
             // 
             // CustomersDetailed
@@ -467,7 +459,7 @@
             this.Controls.Add(this.dataGridViewCustActivity);
             this.Controls.Add(this.btnClose);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "CustomersDetailed";
             this.Text = "Подробная информация о записи";
@@ -498,7 +490,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SeasonTTFDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -507,10 +498,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private FitClubDBDataSetHosting fitClubDBDataSetHosting;
+        private FitClubDBDataSet fitClubDBDataSetHosting;
         private System.Windows.Forms.BindingSource customersTableBindingSource;
-        private FitClubDBDataSetHostingTableAdapters.CustomersTableTableAdapter customersTableTableAdapter;
-        private FitClubDBDataSetHostingTableAdapters.TableAdapterManager tableAdapterManager;
+        private FitClubDBDataSetTableAdapters.CustomersTableTableAdapter customersTableTableAdapter;
+        private FitClubDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox surnameTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox seasonTicketTextBox;

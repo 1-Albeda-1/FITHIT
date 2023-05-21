@@ -1,4 +1,4 @@
-﻿namespace Курсовая_СмирноваКристина_ИП_20_3
+﻿namespace FITHIT
 {
     partial class ActivityTable
     {
@@ -52,7 +52,6 @@
             this.TimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceActivity = new System.Windows.Forms.BindingSource(this.components);
-            this.fitClubDBDataSetHosting = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHosting();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,17 +69,18 @@
             this.toolStripStatusLabelAccount = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBoxCriteria = new System.Windows.Forms.TextBox();
             this.comboBoxActivityName = new System.Windows.Forms.ComboBox();
-            this.activityNameTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.activityTableTableAdapter = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters.ActivityTableTableAdapter();
-            this.activityNameTableTableAdapter = new Курсовая_СмирноваКристина_ИП_20_3.FitClubDBDataSetHostingTableAdapters.ActivityNameTableTableAdapter();
+            this.activityTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.ActivityTableTableAdapter();
+            this.activityNameTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.ActivityNameTableTableAdapter();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.fitClubDBDataSet = new FITHIT.FitClubDBDataSet();
+            this.activityNameTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActivity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceActivity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSetHosting)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityNameTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,14 +106,14 @@
             this.базаДанныхToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.рассписаниеЗанятийToolStripMenuItem,
             this.клиентыToolStripMenuItem});
-            this.базаДанныхToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_база_данных_100;
+            this.базаДанныхToolStripMenuItem.Image = global::FITHIT.Properties.Resources.icons8_база_данных_100;
             this.базаДанныхToolStripMenuItem.Name = "базаДанныхToolStripMenuItem";
             this.базаДанныхToolStripMenuItem.Size = new System.Drawing.Size(188, 32);
             this.базаДанныхToolStripMenuItem.Text = "База данных";
             // 
             // рассписаниеЗанятийToolStripMenuItem
             // 
-            this.рассписаниеЗанятийToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_посмотреть_расписание_100;
+            this.рассписаниеЗанятийToolStripMenuItem.Image = global::FITHIT.Properties.Resources.icons8_посмотреть_расписание_100;
             this.рассписаниеЗанятийToolStripMenuItem.Name = "рассписаниеЗанятийToolStripMenuItem";
             this.рассписаниеЗанятийToolStripMenuItem.Size = new System.Drawing.Size(358, 40);
             this.рассписаниеЗанятийToolStripMenuItem.Text = "Рассписание занятий";
@@ -121,7 +121,7 @@
             // 
             // клиентыToolStripMenuItem
             // 
-            this.клиентыToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_пользователь_100__1_;
+            this.клиентыToolStripMenuItem.Image = global::FITHIT.Properties.Resources.icons8_пользователь_100__1_;
             this.клиентыToolStripMenuItem.Name = "клиентыToolStripMenuItem";
             this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(358, 40);
             this.клиентыToolStripMenuItem.Text = "Клиенты";
@@ -129,7 +129,7 @@
             // 
             // добавитьЗаписьToolStripMenuItem
             // 
-            this.добавитьЗаписьToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_добавить_100;
+            this.добавитьЗаписьToolStripMenuItem.Image = global::FITHIT.Properties.Resources.icons8_добавить_100;
             this.добавитьЗаписьToolStripMenuItem.Name = "добавитьЗаписьToolStripMenuItem";
             this.добавитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(234, 32);
             this.добавитьЗаписьToolStripMenuItem.Text = "Добавить запись";
@@ -137,7 +137,7 @@
             // 
             // экспортДанныхToolStripMenuItem
             // 
-            this.экспортДанныхToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_export_excel_100;
+            this.экспортДанныхToolStripMenuItem.Image = global::FITHIT.Properties.Resources.icons8_export_excel_100;
             this.экспортДанныхToolStripMenuItem.Name = "экспортДанныхToolStripMenuItem";
             this.экспортДанныхToolStripMenuItem.Size = new System.Drawing.Size(230, 32);
             this.экспортДанныхToolStripMenuItem.Text = "Экспорт данных";
@@ -147,7 +147,7 @@
             // 
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.просмотрСправкиToolStripMenuItem});
-            this.справкаToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_документ_100;
+            this.справкаToolStripMenuItem.Image = global::FITHIT.Properties.Resources.icons8_документ_100;
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
             this.справкаToolStripMenuItem.Size = new System.Drawing.Size(149, 32);
             this.справкаToolStripMenuItem.Text = "Справка";
@@ -161,7 +161,7 @@
             // 
             // выходToolStripMenuItem
             // 
-            this.выходToolStripMenuItem.Image = global::Курсовая_СмирноваКристина_ИП_20_3.Properties.Resources.icons8_выход_100;
+            this.выходToolStripMenuItem.Image = global::FITHIT.Properties.Resources.icons8_выход_100;
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(119, 32);
             this.выходToolStripMenuItem.Text = "Выход";
@@ -169,6 +169,7 @@
             // 
             // dataGridViewActivity
             // 
+            this.dataGridViewActivity.AllowUserToAddRows = false;
             this.dataGridViewActivity.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -200,6 +201,7 @@
             this.dataGridViewActivity.Location = new System.Drawing.Point(37, 114);
             this.dataGridViewActivity.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewActivity.Name = "dataGridViewActivity";
+            this.dataGridViewActivity.ReadOnly = true;
             this.dataGridViewActivity.RowHeadersWidth = 72;
             this.dataGridViewActivity.RowTemplate.Height = 31;
             this.dataGridViewActivity.Size = new System.Drawing.Size(1005, 449);
@@ -210,6 +212,7 @@
             this.IDDataGridViewTextBoxColumn.HeaderText = "Код занятия";
             this.IDDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn";
+            this.IDDataGridViewTextBoxColumn.ReadOnly = true;
             this.IDDataGridViewTextBoxColumn.Visible = false;
             this.IDDataGridViewTextBoxColumn.Width = 175;
             // 
@@ -218,6 +221,7 @@
             this.NameTDataGridViewTextBoxColumn.HeaderText = "Имя тренера";
             this.NameTDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.NameTDataGridViewTextBoxColumn.Name = "NameTDataGridViewTextBoxColumn";
+            this.NameTDataGridViewTextBoxColumn.ReadOnly = true;
             this.NameTDataGridViewTextBoxColumn.Width = 175;
             // 
             // SurnameTDataGridViewTextBoxColumn
@@ -225,6 +229,7 @@
             this.SurnameTDataGridViewTextBoxColumn.HeaderText = "Фамилия тренера";
             this.SurnameTDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.SurnameTDataGridViewTextBoxColumn.Name = "SurnameTDataGridViewTextBoxColumn";
+            this.SurnameTDataGridViewTextBoxColumn.ReadOnly = true;
             this.SurnameTDataGridViewTextBoxColumn.Width = 175;
             // 
             // FitClubDataGridViewTextBoxColumn
@@ -232,6 +237,7 @@
             this.FitClubDataGridViewTextBoxColumn.HeaderText = "Фитнес клуб";
             this.FitClubDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.FitClubDataGridViewTextBoxColumn.Name = "FitClubDataGridViewTextBoxColumn";
+            this.FitClubDataGridViewTextBoxColumn.ReadOnly = true;
             this.FitClubDataGridViewTextBoxColumn.Width = 175;
             // 
             // ActivityNameIDDataGridViewTextBoxColumn
@@ -239,6 +245,7 @@
             this.ActivityNameIDDataGridViewTextBoxColumn.HeaderText = "Занятие";
             this.ActivityNameIDDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.ActivityNameIDDataGridViewTextBoxColumn.Name = "ActivityNameIDDataGridViewTextBoxColumn";
+            this.ActivityNameIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.ActivityNameIDDataGridViewTextBoxColumn.Width = 175;
             // 
             // DateDataGridViewTextBoxColumn
@@ -246,6 +253,7 @@
             this.DateDataGridViewTextBoxColumn.HeaderText = "Дата проведения";
             this.DateDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.DateDataGridViewTextBoxColumn.Name = "DateDataGridViewTextBoxColumn";
+            this.DateDataGridViewTextBoxColumn.ReadOnly = true;
             this.DateDataGridViewTextBoxColumn.Width = 175;
             // 
             // StartTimeDataGridViewTextBoxColumn
@@ -253,6 +261,7 @@
             this.StartTimeDataGridViewTextBoxColumn.HeaderText = "Время проведения";
             this.StartTimeDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.StartTimeDataGridViewTextBoxColumn.Name = "StartTimeDataGridViewTextBoxColumn";
+            this.StartTimeDataGridViewTextBoxColumn.ReadOnly = true;
             this.StartTimeDataGridViewTextBoxColumn.Width = 175;
             // 
             // TimeDataGridViewTextBoxColumn
@@ -260,6 +269,7 @@
             this.TimeDataGridViewTextBoxColumn.HeaderText = "Длительность занятия";
             this.TimeDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.TimeDataGridViewTextBoxColumn.Name = "TimeDataGridViewTextBoxColumn";
+            this.TimeDataGridViewTextBoxColumn.ReadOnly = true;
             this.TimeDataGridViewTextBoxColumn.Width = 175;
             // 
             // CostDataGridViewTextBoxColumn
@@ -267,17 +277,13 @@
             this.CostDataGridViewTextBoxColumn.HeaderText = "Стоимость занятия";
             this.CostDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.CostDataGridViewTextBoxColumn.Name = "CostDataGridViewTextBoxColumn";
+            this.CostDataGridViewTextBoxColumn.ReadOnly = true;
             this.CostDataGridViewTextBoxColumn.Width = 175;
             // 
             // bindingSourceActivity
             // 
-            this.bindingSourceActivity.DataSource = this.fitClubDBDataSetHosting;
+            this.bindingSourceActivity.DataSource = this.fitClubDBDataSet;
             this.bindingSourceActivity.Position = 0;
-            // 
-            // fitClubDBDataSetHosting
-            // 
-            this.fitClubDBDataSetHosting.DataSetName = "FitClubDBDataSetHosting";
-            this.fitClubDBDataSetHosting.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -495,11 +501,6 @@
             this.comboBoxActivityName.MouseEnter += new System.EventHandler(this.comboBoxActivityName_MouseEnter);
             this.comboBoxActivityName.MouseLeave += new System.EventHandler(this.comboBoxActivityName_MouseLeave);
             // 
-            // activityNameTableBindingSource
-            // 
-            this.activityNameTableBindingSource.DataMember = "ActivityNameTable";
-            this.activityNameTableBindingSource.DataSource = this.fitClubDBDataSetHosting;
-            // 
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
@@ -521,6 +522,21 @@
             // activityNameTableTableAdapter
             // 
             this.activityNameTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\HUAWEi\\OneDrive\\Рабочий стол\\КУРСАЧ\\Курсовая_СмирноваКристина_ИП-20-3\\bi" +
+    "n\\Debug\\РуководстваОператора_Смирнова.docx";
+            // 
+            // fitClubDBDataSet
+            // 
+            this.fitClubDBDataSet.DataSetName = "FitClubDBDataSet";
+            this.fitClubDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // activityNameTableBindingSource
+            // 
+            this.activityNameTableBindingSource.DataMember = "ActivityNameTable";
+            this.activityNameTableBindingSource.DataSource = this.fitClubDBDataSet;
             // 
             // ActivityTable
             // 
@@ -553,11 +569,11 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActivity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceActivity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSetHosting)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityNameTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -595,10 +611,8 @@
         private System.Windows.Forms.ToolStripMenuItem добавитьЗаписьToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelAccount;
         private System.Windows.Forms.Button buttonDelete;
-        private FitClubDBDataSetHosting fitClubDBDataSetHosting;
-        private FitClubDBDataSetHostingTableAdapters.ActivityTableTableAdapter activityTableTableAdapter;
-        private System.Windows.Forms.BindingSource activityNameTableBindingSource;
-        private FitClubDBDataSetHostingTableAdapters.ActivityNameTableTableAdapter activityNameTableTableAdapter;
+        private FitClubDBDataSetTableAdapters.ActivityTableTableAdapter activityTableTableAdapter;
+        private FitClubDBDataSetTableAdapters.ActivityNameTableTableAdapter activityNameTableTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SurnameTDataGridViewTextBoxColumn;
@@ -609,6 +623,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CostDataGridViewTextBoxColumn;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private FitClubDBDataSet fitClubDBDataSet;
+        private System.Windows.Forms.BindingSource activityNameTableBindingSource;
     }
 }
 

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0AF13C62-00F7-4166-95A7-A2FCFE918B5F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Курсовая_СмирноваКристина_ИП_20_3</RootNamespace>
-    <AssemblyName>Курсовая_СмирноваКристина_ИП-20-3</AssemblyName>
+    <RootNamespace>FITHIT</RootNamespace>
+    <AssemblyName>FITHIT</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -140,10 +140,10 @@
     <Compile Include="CustomersTable.Designer.cs">
       <DependentUpon>CustomersTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="FitClubDBDataSetHosting.Designer.cs">
+    <Compile Include="FitClubDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FitClubDBDataSetHosting.xsd</DependentUpon>
+      <DependentUpon>FitClubDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -176,16 +176,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="FitClubDBDataSetHosting.xsc">
-      <DependentUpon>FitClubDBDataSetHosting.xsd</DependentUpon>
+    <None Include="FitClubDBDataSet.xsc">
+      <DependentUpon>FitClubDBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="FitClubDBDataSetHosting.xsd">
+    <None Include="FitClubDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FitClubDBDataSetHosting.Designer.cs</LastGenOutput>
+      <LastGenOutput>FitClubDBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="FitClubDBDataSetHosting.xss">
-      <DependentUpon>FitClubDBDataSetHosting.xsd</DependentUpon>
+    <None Include="FitClubDBDataSet.xss">
+      <DependentUpon>FitClubDBDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -319,9 +319,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="icons8-спортзал-100.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
