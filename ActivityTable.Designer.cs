@@ -51,7 +51,7 @@
             this.StartTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSourceActivity = new System.Windows.Forms.BindingSource(this.components);
+            this.fitClubDBDataSet = new FITHIT.FitClubDBDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,18 +69,15 @@
             this.toolStripStatusLabelAccount = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBoxCriteria = new System.Windows.Forms.TextBox();
             this.comboBoxActivityName = new System.Windows.Forms.ComboBox();
+            this.activityNameTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonDelete = new System.Windows.Forms.Button();
             this.activityTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.ActivityTableTableAdapter();
-            this.activityNameTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.ActivityNameTableTableAdapter();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.fitClubDBDataSet = new FITHIT.FitClubDBDataSet();
-            this.activityNameTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActivity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceActivity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityNameTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,10 +277,10 @@
             this.CostDataGridViewTextBoxColumn.ReadOnly = true;
             this.CostDataGridViewTextBoxColumn.Width = 175;
             // 
-            // bindingSourceActivity
+            // fitClubDBDataSet
             // 
-            this.bindingSourceActivity.DataSource = this.fitClubDBDataSet;
-            this.bindingSourceActivity.Position = 0;
+            this.fitClubDBDataSet.DataSetName = "FitClubDBDataSet";
+            this.fitClubDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -501,6 +498,11 @@
             this.comboBoxActivityName.MouseEnter += new System.EventHandler(this.comboBoxActivityName_MouseEnter);
             this.comboBoxActivityName.MouseLeave += new System.EventHandler(this.comboBoxActivityName_MouseLeave);
             // 
+            // activityNameTableBindingSource
+            // 
+            this.activityNameTableBindingSource.DataMember = "ActivityNameTable";
+            this.activityNameTableBindingSource.DataSource = this.fitClubDBDataSet;
+            // 
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
@@ -519,24 +521,10 @@
             // 
             this.activityTableTableAdapter.ClearBeforeFill = true;
             // 
-            // activityNameTableTableAdapter
-            // 
-            this.activityNameTableTableAdapter.ClearBeforeFill = true;
-            // 
             // helpProvider1
             // 
             this.helpProvider1.HelpNamespace = "C:\\Users\\HUAWEi\\OneDrive\\Рабочий стол\\КУРСАЧ\\Курсовая_СмирноваКристина_ИП-20-3\\bi" +
     "n\\Debug\\РуководстваОператора_Смирнова.docx";
-            // 
-            // fitClubDBDataSet
-            // 
-            this.fitClubDBDataSet.DataSetName = "FitClubDBDataSet";
-            this.fitClubDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // activityNameTableBindingSource
-            // 
-            this.activityNameTableBindingSource.DataMember = "ActivityNameTable";
-            this.activityNameTableBindingSource.DataSource = this.fitClubDBDataSet;
             // 
             // ActivityTable
             // 
@@ -568,13 +556,11 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActivity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceActivity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activityNameTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -590,7 +576,6 @@
         private System.Windows.Forms.ToolStripMenuItem просмотрСправкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         public System.Windows.Forms.DataGridView dataGridViewActivity;
-        private System.Windows.Forms.BindingSource bindingSourceActivity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -612,7 +597,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelAccount;
         private System.Windows.Forms.Button buttonDelete;
         private FitClubDBDataSetTableAdapters.ActivityTableTableAdapter activityTableTableAdapter;
-        private FitClubDBDataSetTableAdapters.ActivityNameTableTableAdapter activityNameTableTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SurnameTDataGridViewTextBoxColumn;

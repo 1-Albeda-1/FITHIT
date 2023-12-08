@@ -20,6 +20,8 @@ namespace FITHIT
             StartPosition = FormStartPosition.CenterScreen;
 
         }
+        private string connectionString = "Data Source=SMIRNOVAPC;Initial Catalog=FitClubDB;Integrated Security=True";
+
         private void AuthorizationForm_Load(object sender, EventArgs e) // Ввод вмето пароля символа: '*'
         {
             textBoxPassword.PasswordChar = '*';
@@ -33,8 +35,7 @@ namespace FITHIT
             DataTable table = new DataTable();
 
             string querystring = $"select ID, Login, Password from UsersTable where Login = '{loginUser}' and Password = '{passwordUser}'"; // Запрос на сравнение введенного текста с БД 
-            string connString = "Data Source=FitClubDB.mssql.somee.com;Initial Catalog=FitClubDB;User ID=Albeda1310_SQLLogin_1;Password=qz6kfq6fgy";
-            SqlConnection conn = new SqlConnection(connString);
+            SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(querystring, conn);
 
             adapter.SelectCommand = command;

@@ -30,7 +30,7 @@ namespace FITHIT
                 "WHERE " +
                 "[ActivityTable].[ActivityNameID]=[ActivityNameTable].[ID]";
 
-        private string connectionString = "Data Source=FitClubDB.mssql.somee.com;Initial Catalog=FitClubDB;User ID=Albeda1310_SQLLogin_1;Password=qz6kfq6fgy";
+        private string connectionString = "Data Source=SMIRNOVAPC;Initial Catalog=FitClubDB;Integrated Security=True";
         public ActivityTable()
         {
             InitializeComponent();
@@ -57,7 +57,6 @@ namespace FITHIT
         private AuthorizationForm authorizationForm;
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityNameTable);
             TableLoad(PRINT_ALL);
         }
 
@@ -228,7 +227,7 @@ namespace FITHIT
             }
         }
 
-        private void buttonDelete_Click(object sender, EventArgs e) // Удаление выбранного из занятий и привязанных к этому занятию клиентов
+        private void buttonDelete_Click(object sender, EventArgs e) // Удаление выбранного занятия и привязанных к этому занятию клиентов
         {
             if (dataGridViewActivity.SelectedRows.Count > 0)
             {

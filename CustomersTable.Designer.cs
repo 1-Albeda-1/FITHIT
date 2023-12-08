@@ -72,10 +72,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.customersTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.CustomersTableTableAdapter();
             this.activityTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.ActivityTableTableAdapter();
             this.btnCustomersDetailed = new System.Windows.Forms.Button();
-            this.activityNameTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.ActivityNameTableTableAdapter();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCustomers)).BeginInit();
@@ -513,10 +511,6 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // customersTableTableAdapter
-            // 
-            this.customersTableTableAdapter.ClearBeforeFill = true;
-            // 
             // activityTableTableAdapter
             // 
             this.activityTableTableAdapter.ClearBeforeFill = true;
@@ -534,10 +528,6 @@
             this.btnCustomersDetailed.Text = "Подробная информация";
             this.btnCustomersDetailed.UseVisualStyleBackColor = false;
             this.btnCustomersDetailed.Click += new System.EventHandler(this.btnCustomersDetailed_Click);
-            // 
-            // activityNameTableTableAdapter
-            // 
-            this.activityNameTableTableAdapter.ClearBeforeFill = true;
             // 
             // helpProvider1
             // 
@@ -626,12 +616,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn activityid;
         private System.Windows.Forms.DataGridViewTextBoxColumn seasonTTFDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn seasonTicketDataGridViewTextBoxColumn;
-        private FitClubDBDataSetTableAdapters.CustomersTableTableAdapter customersTableTableAdapter;
         private FitClubDBDataSetTableAdapters.ActivityTableTableAdapter activityTableTableAdapter;
         private FitClubDBDataSet fitClubDBDataSetHosting;
         private System.Windows.Forms.Button btnCustomersDetailed;
         private System.Windows.Forms.BindingSource activityNameTableBindingSource;
-        private FitClubDBDataSetTableAdapters.ActivityNameTableTableAdapter activityNameTableTableAdapter;
         private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

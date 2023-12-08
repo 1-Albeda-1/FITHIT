@@ -58,11 +58,10 @@ namespace FITHIT
                 "[ActivityTable].[ActivityNameID]=[ActivityNameTable].[ID] AND " +
                 "[CustomersTable].[ActivityId]=[ActivityTable].[ID]";
 
-        private string connectionString = "Data Source=FitClubDB.mssql.somee.com;Initial Catalog=FitClubDB;User ID=Albeda1310_SQLLogin_1;Password=qz6kfq6fgy";
+        private string connectionString = "Data Source=SMIRNOVAPC;Initial Catalog=FitClubDB;Integrated Security=True";
 
         private void CustomersTable_Load(object sender, EventArgs e)
         {
-            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSetHosting.ActivityNameTable);
             TableLoad(PRINT_ALL);
         }
 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label surnameLabel;
             System.Windows.Forms.Label fitClubLabel;
@@ -46,11 +45,8 @@
             this.seasonTTFComboBox = new System.Windows.Forms.ComboBox();
             this.seasonTicketComboBox = new System.Windows.Forms.ComboBox();
             this.activityidComboBox = new System.Windows.Forms.ComboBox();
-            this.activityTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fitClubDBDataSet = new FITHIT.FitClubDBDataSet();
             this.phoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.activityTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.ActivityTableTableAdapter();
-            this.activityNameTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.ActivityNameTableTableAdapter();
             nameLabel = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
             fitClubLabel = new System.Windows.Forms.Label();
@@ -59,8 +55,6 @@
             activityidLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activityTableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -241,8 +235,6 @@
             // 
             // activityidComboBox
             // 
-            this.activityidComboBox.DataSource = this.activityTableBindingSource;
-            this.activityidComboBox.DisplayMember = "ActivityName";
             this.activityidComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.activityidComboBox.FormattingEnabled = true;
             this.activityidComboBox.Location = new System.Drawing.Point(282, 522);
@@ -251,16 +243,6 @@
             this.activityidComboBox.Size = new System.Drawing.Size(255, 32);
             this.activityidComboBox.TabIndex = 53;
             this.activityidComboBox.ValueMember = "ID";
-            // 
-            // activityTableBindingSource
-            // 
-            this.activityTableBindingSource.DataMember = "ActivityTable";
-            this.activityTableBindingSource.DataSource = this.fitClubDBDataSet;
-            // 
-            // fitClubDBDataSet
-            // 
-            this.fitClubDBDataSet.DataSetName = "FitClubDBDataSet";
-            this.fitClubDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // phoneMaskedTextBox
             // 
@@ -274,10 +256,6 @@
             // activityTableTableAdapter
             // 
             this.activityTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // activityNameTableTableAdapter
-            // 
-            this.activityNameTableTableAdapter.ClearBeforeFill = true;
             // 
             // AddCustomers
             // 
@@ -311,8 +289,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activityTableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,8 +308,5 @@
         private System.Windows.Forms.ComboBox activityidComboBox;
         private System.Windows.Forms.MaskedTextBox phoneMaskedTextBox;
         private FitClubDBDataSetTableAdapters.ActivityTableTableAdapter activityTableTableAdapter;
-        private FitClubDBDataSetTableAdapters.ActivityNameTableTableAdapter activityNameTableTableAdapter;
-        private FitClubDBDataSet fitClubDBDataSet;
-        private System.Windows.Forms.BindingSource activityTableBindingSource;
     }
 }

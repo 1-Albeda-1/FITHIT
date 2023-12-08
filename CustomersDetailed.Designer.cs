@@ -66,7 +66,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.customersTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.CustomersTableTableAdapter();
             this.tableAdapterManager = new FITHIT.FitClubDBDataSetTableAdapters.TableAdapterManager();
             nameLabel = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
@@ -434,17 +433,14 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 44);
-            // 
-            // customersTableTableAdapter
-            // 
-            this.customersTableTableAdapter.ClearBeforeFill = true;
+
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.ActivityNameTableTableAdapter = null;
+
             this.tableAdapterManager.ActivityTableTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CustomersTableTableAdapter = this.customersTableTableAdapter;
+
             this.tableAdapterManager.UpdateOrder = FITHIT.FitClubDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsersTableTableAdapter = null;
             // 
@@ -500,7 +496,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private FitClubDBDataSet fitClubDBDataSetHosting;
         private System.Windows.Forms.BindingSource customersTableBindingSource;
-        private FitClubDBDataSetTableAdapters.CustomersTableTableAdapter customersTableTableAdapter;
         private FitClubDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox surnameTextBox;
         private System.Windows.Forms.TextBox nameTextBox;

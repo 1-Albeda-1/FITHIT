@@ -20,11 +20,9 @@ namespace FITHIT
             tip.SetToolTip(nameTTextBox, "Введите имя тренера, который будет проводить занятие"); // Вывод подсказок
             tip.SetToolTip(surnameTTextBox, "Введите фамилию тренера, который будет проводить занятие");
         }
-        private string connectionString = "Data Source=FitClubDB.mssql.somee.com;Initial Catalog=FitClubDB;User ID=Albeda1310_SQLLogin_1;Password=qz6kfq6fgy";
+        private string connectionString = "Data Source=SMIRNOVAPC;Initial Catalog=FitClubDB;Integrated Security=True";
         private void AddActivity_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSetHosting.ActivityNameTable". При необходимости она может быть перемещена или удалена.
-            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityNameTable);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e) // Кнопка добавить запись
@@ -70,7 +68,7 @@ namespace FITHIT
         private void nameTTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char l = e.KeyChar;
-            if (l < 'А' || l > 'я')
+            if (l < 'А' || l > 'я' && l != 8)
             {
                 e.Handled = true;
             }

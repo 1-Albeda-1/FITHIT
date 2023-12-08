@@ -34,12 +34,11 @@ namespace FITHIT
                 "[ActivityTable].[ActivityNameID]=[ActivityNameTable].[ID] AND " +
                 "[CustomersTable].[ActivityId]=[ActivityTable].[ID]";
 
-        private string connectionString = "Data Source=FitClubDB.mssql.somee.com;Initial Catalog=FitClubDB;User ID=Albeda1310_SQLLogin_1;Password=qz6kfq6fgy";
+        private string connectionString = "Data Source=SMIRNOVAPC;Initial Catalog=FitClubDB;Integrated Security=True";
 
         private void CustomersList_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSetHosting.CustomersTable". При необходимости она может быть перемещена или удалена.
-            this.customersTableTableAdapter.Fill(this.fitClubDBDataSetHosting.CustomersTable);
+
             TableLoad(PRINT_ALL);
         }
         private void TableLoad(string query) // Метод заполняющий dataGridView значениями при помощи запроса

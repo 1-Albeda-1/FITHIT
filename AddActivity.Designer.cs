@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nameTLabel;
             System.Windows.Forms.Label surnameTLabel;
             System.Windows.Forms.Label fitClubLabel;
@@ -37,7 +36,6 @@
             System.Windows.Forms.Label timeLabel;
             System.Windows.Forms.Label label2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddActivity));
-            this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,11 +47,7 @@
             this.fitclubComboBox = new System.Windows.Forms.ComboBox();
             this.timeComboBox = new System.Windows.Forms.ComboBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.activityTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.ActivityTableTableAdapter();
-            this.activityNameTableTableAdapter = new FITHIT.FitClubDBDataSetTableAdapters.ActivityNameTableTableAdapter();
             this.startTimecomboBox = new System.Windows.Forms.ComboBox();
-            this.fitClubDBDataSet = new FITHIT.FitClubDBDataSet();
-            this.activityNameTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nameTLabel = new System.Windows.Forms.Label();
             surnameTLabel = new System.Windows.Forms.Label();
             fitClubLabel = new System.Windows.Forms.Label();
@@ -61,11 +55,8 @@
             dateLabel = new System.Windows.Forms.Label();
             timeLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activityNameTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nameTLabel
@@ -134,10 +125,16 @@
             timeLabel.TabIndex = 34;
             timeLabel.Text = "Длительность занятия:";
             // 
-            // activityBindingSource
+            // label2
             // 
-            this.activityBindingSource.DataSource = this.fitClubDBDataSet;
-            this.activityBindingSource.Position = 0;
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            label2.Location = new System.Drawing.Point(73, 523);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(205, 23);
+            label2.TabIndex = 64;
+            label2.Text = "Время проведения:";
             // 
             // panel1
             // 
@@ -146,7 +143,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(629, 113);
             this.panel1.TabIndex = 37;
@@ -155,7 +152,7 @@
             // 
             this.pictureBox1.Image = global::FITHIT.Properties.Resources.icons8_календарь_с_плюсом_1001;
             this.pictureBox1.Location = new System.Drawing.Point(24, 17);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(92, 81);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -181,7 +178,7 @@
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAdd.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAdd.Location = new System.Drawing.Point(59, 663);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(249, 65);
             this.buttonAdd.TabIndex = 38;
@@ -194,7 +191,7 @@
             this.dateDateTimePicker.CustomFormat = "";
             this.dateDateTimePicker.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateDateTimePicker.Location = new System.Drawing.Point(288, 450);
-            this.dateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.dateDateTimePicker.Name = "dateDateTimePicker";
             this.dateDateTimePicker.Size = new System.Drawing.Size(257, 31);
             this.dateDateTimePicker.TabIndex = 50;
@@ -203,7 +200,7 @@
             // nameTTextBox
             // 
             this.nameTTextBox.Location = new System.Drawing.Point(288, 146);
-            this.nameTTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameTTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTTextBox.Name = "nameTTextBox";
             this.nameTTextBox.Size = new System.Drawing.Size(257, 29);
             this.nameTTextBox.TabIndex = 57;
@@ -212,7 +209,7 @@
             // surnameTTextBox
             // 
             this.surnameTTextBox.Location = new System.Drawing.Point(288, 222);
-            this.surnameTTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.surnameTTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.surnameTTextBox.Name = "surnameTTextBox";
             this.surnameTTextBox.Size = new System.Drawing.Size(257, 29);
             this.surnameTTextBox.TabIndex = 58;
@@ -220,12 +217,10 @@
             // 
             // activityComboBox
             // 
-            this.activityComboBox.DataSource = this.activityNameTableBindingSource;
-            this.activityComboBox.DisplayMember = "ActivityName";
             this.activityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.activityComboBox.FormattingEnabled = true;
             this.activityComboBox.Location = new System.Drawing.Point(288, 373);
-            this.activityComboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.activityComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.activityComboBox.Name = "activityComboBox";
             this.activityComboBox.Size = new System.Drawing.Size(257, 32);
             this.activityComboBox.TabIndex = 59;
@@ -240,7 +235,7 @@
             "FITHIT(м. Пионерская)",
             "FITHIT(м. Беговая)"});
             this.fitclubComboBox.Location = new System.Drawing.Point(288, 301);
-            this.fitclubComboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.fitclubComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.fitclubComboBox.Name = "fitclubComboBox";
             this.fitclubComboBox.Size = new System.Drawing.Size(257, 32);
             this.fitclubComboBox.TabIndex = 60;
@@ -253,7 +248,7 @@
             "1,5 часа",
             "2 часа"});
             this.timeComboBox.Location = new System.Drawing.Point(290, 589);
-            this.timeComboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.timeComboBox.Margin = new System.Windows.Forms.Padding(6);
             this.timeComboBox.Name = "timeComboBox";
             this.timeComboBox.Size = new System.Drawing.Size(257, 32);
             this.timeComboBox.TabIndex = 61;
@@ -264,21 +259,13 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnClose.Location = new System.Drawing.Point(337, 663);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(249, 65);
             this.btnClose.TabIndex = 62;
             this.btnClose.Text = "Закрыть";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // activityTableTableAdapter
-            // 
-            this.activityTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // activityNameTableTableAdapter
-            // 
-            this.activityNameTableTableAdapter.ClearBeforeFill = true;
             // 
             // startTimecomboBox
             // 
@@ -295,31 +282,10 @@
             "19:00",
             "20:00"});
             this.startTimecomboBox.Location = new System.Drawing.Point(288, 519);
-            this.startTimecomboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.startTimecomboBox.Margin = new System.Windows.Forms.Padding(6);
             this.startTimecomboBox.Name = "startTimecomboBox";
             this.startTimecomboBox.Size = new System.Drawing.Size(257, 32);
             this.startTimecomboBox.TabIndex = 63;
-            // 
-            // fitClubDBDataSet
-            // 
-            this.fitClubDBDataSet.DataSetName = "FitClubDBDataSet";
-            this.fitClubDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Century Gothic", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            label2.Location = new System.Drawing.Point(73, 523);
-            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(205, 23);
-            label2.TabIndex = 64;
-            label2.Text = "Время проведения:";
-            // 
-            // activityNameTableBindingSource
-            // 
-            this.activityNameTableBindingSource.DataMember = "ActivityNameTable";
-            this.activityNameTableBindingSource.DataSource = this.fitClubDBDataSet;
             // 
             // AddActivity
             // 
@@ -346,18 +312,15 @@
             this.Controls.Add(nameTLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddActivity";
             this.Text = "Добавить занятие";
             this.Load += new System.EventHandler(this.AddActivity_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fitClubDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activityNameTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,15 +334,10 @@
         private System.Windows.Forms.DateTimePicker dateDateTimePicker;
         private System.Windows.Forms.TextBox nameTTextBox;
         private System.Windows.Forms.TextBox surnameTTextBox;
-        private System.Windows.Forms.BindingSource activityBindingSource;
         private System.Windows.Forms.ComboBox activityComboBox;
         private System.Windows.Forms.ComboBox fitclubComboBox;
         private System.Windows.Forms.ComboBox timeComboBox;
         private System.Windows.Forms.Button btnClose;
-        private FitClubDBDataSetTableAdapters.ActivityTableTableAdapter activityTableTableAdapter;
-        private FitClubDBDataSetTableAdapters.ActivityNameTableTableAdapter activityNameTableTableAdapter;
         private System.Windows.Forms.ComboBox startTimecomboBox;
-        private FitClubDBDataSet fitClubDBDataSet;
-        private System.Windows.Forms.BindingSource activityNameTableBindingSource;
     }
 }

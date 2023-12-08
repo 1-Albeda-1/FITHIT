@@ -21,13 +21,11 @@ namespace FITHIT
             tip.SetToolTip(surnameTextBox, "Введите фамилию клиента");
             tip.SetToolTip(phoneMaskedTextBox, "Введите номер телефона клиента");
         }
+        private string connectionString = "Data Source=SMIRNOVAPC;Initial Catalog=FitClubDB;Integrated Security=True";
 
         private void AddCustomers_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSetHosting.ActivityNameTable". При необходимости она может быть перемещена или удалена.
-            this.activityNameTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityNameTable);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "fitClubDBDataSetHosting.ActivityTable". При необходимости она может быть перемещена или удалена.
-            this.activityTableTableAdapter.Fill(this.fitClubDBDataSet.ActivityTable);
+
         }
         private void seasonTTFComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -46,7 +44,6 @@ namespace FITHIT
              if (nameTextBox.Text.Length != 0 && surnameTextBox.Text.Length != 0 && phoneMaskedTextBox.Text.Length != 0)
              {
                 string query = $"INSERT INTO CustomersTable VALUES('{nameTextBox.Text}', '{surnameTextBox.Text}', '{phoneMaskedTextBox.Text}', {activityidComboBox.SelectedValue}, '{seasonTTFComboBox.SelectedItem}', '{seasonTicketComboBox.SelectedItem}')"; // Запрос на добавление данных введенных в поля в БД
-                string connectionString = "Data Source=FitClubDB.mssql.somee.com;Initial Catalog=FitClubDB;User ID=Albeda1310_SQLLogin_1;Password=qz6kfq6fgy";
 
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
